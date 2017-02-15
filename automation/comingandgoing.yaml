@@ -1,0 +1,168 @@
+####################################################################################################################################################################
+###                                                                       ARRIVAL ROUTINES                                                                       ###
+####################################################################################################################################################################
+
+###  Wake Up Main PC  ###
+###  [IF GEORGE COMES HOME] ###
+###  [PC] [Turn On]  ###
+- alias: "Waking PC"
+  trigger:
+    platform: state
+    entity_id: device_tracker.george_phone
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: switch.turn_on
+    entity_id: switch.main_pc
+    
+###  Alarm Automation Home Via Location Trigger  ###
+###  [WHEN FAMILY IS NOT HOME]  ###
+###  [Alarm] [Turn Off] Disarmed  ###
+- alias: "Alarm Disarmed"
+  trigger:
+    platform: state
+    entity_id: group.family
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: alarm_control_panel.alarm_disarm
+    entity_id: alarm_control_panel.house_alarm
+    
+###  Alarm Automation Home Via Garage Trigger  ###
+###  [IF ALARM IS ARMED] ###
+###  [IF FAMILY IS NOT HOME]  ###
+###  [Alarm] [Turn Off] Disarmed  ###
+#- alias: "Garage Door Opened Alarm Disarmed"
+#  trigger:
+#    platform: state
+#    entity_id: cover.garage_door
+#    from: 'closed'
+#    to: 'open'
+#  condition:
+#    condition: or
+#    conditions:    
+#      - condition: state
+#        entity_id: alarm_control_panel.house_alarm
+#        state: 'armed_away'
+#      - condition: state
+#        entity_id: alarm_control_panel.house_alarm
+#        state: 'armed_home'
+#      - condition: state
+#        entity_id: group.family
+#        state: 'not_home'
+#  action:
+#    service: alarm_control_panel.alarm_disarm
+#    entity_id: alarm_control_panel.house_alarm
+    
+###  Alarm Automation Home Via Garage Trigger  ###
+###  [IF ALARM IS ARMED] ###
+###  [IF FAMILY IS NOT HOME]  ###
+###  [Alarm] [Turn Off] Disarmed  ###
+- alias: "Garage Door Opened Alarm Disarmed"
+  trigger:
+    platform: state
+    entity_id: cover.garage_door
+    from: 'closed'
+    to: 'open'
+  condition:
+    condition: state
+    entity_id: group.family
+    state: 'not_home'
+  action:
+    - condition: or
+      conditions:    
+        - condition: state
+          entity_id: alarm_control_panel.house_alarm
+          state: 'armed_away'
+        - condition: state
+          entity_id: alarm_control_panel.house_alarm
+          state: 'armed_home'
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.house_alarm
+
+###  Light Automation via Location Trigger ###
+###  [IF NO ONE HOME]  ###
+###  [Lights] [Turn On] All Lights Downstairs [100%]  ### 
+- alias: "Someone is home [Location]"
+  trigger:
+    platform: state
+    entity_id: group.family
+    from: 'not_home'
+    to: 'home'
+  condition:
+    condition: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 2.5
+  action:
+    service: scene.turn_on
+    entity_id: scene.downstairs_normal
+
+###  Light Automation via Garge Trigger  ###
+###  [IF NO ONE HOME]  ###
+###  [Lights] [Turn On] All Lights Downstairs [100%]  ### 
+- alias: "Someone is home [Garage]"
+  trigger:
+    platform: state
+    entity_id: cover.garage_door
+    from: 'closed'
+    to: 'open'
+  condition:
+    condition: and
+    conditions:    
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        below: 2.5
+      - condition: state
+        entity_id: group.family
+        state: 'not_home'
+  action:
+    service: scene.turn_on
+    entity_id: scene.downstairs_normal
+
+####################################################################################################################################################################
+###                                                                      DEPARTING ROUTINES                                                                      ###
+####################################################################################################################################################################
+
+###  Sleep Main PC  ###
+###  [IF GEORGE NOT HOME FOR 1 HOUR]  ###
+###  [PC] [Turn Off]  ###
+- alias: "Hibernating PC"
+  trigger:
+    platform: state
+    entity_id: device_tracker.george_phone
+    from: 'home'
+    to: 'not_home'
+    for:
+      hours: 1
+      minutes: 0
+      seconds: 0
+  action:
+    service: switch.turn_off
+    entity_id: switch.main_pc_power
+
+###  Arm Alarm Away, Climate Off, Inside Lights Off  ###
+###  [IF ALARM IS DISABLED] ###
+###  [Alarm] [Turn On] Armed Away  ###
+###  [Climate] [Turn On] Away  ###
+###  [Lights] [Turn Off] Inside Lights  ###
+- alias: "Alarm Armed Away Turn Lights Off Away Climate"
+  trigger:
+    platform: state
+    entity_id: group.family
+    from: 'home'
+    to: 'not_home'
+  condition:
+    condition: state
+    entity_id: alarm_control_panel.house_alarm
+    state: 'disarmed'
+  action:
+    - service: alarm_control_panel.alarm_arm_away
+      entity_id: alarm_control_panel.house_alarm
+    - service: scene.turn_on
+      entity_id: scene.all_inside_lights_off
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.living_room
+        away_mode: true

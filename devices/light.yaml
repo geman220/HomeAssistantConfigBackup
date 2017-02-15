@@ -1,0 +1,7 @@
+###  Philips Hue Lights  ###
+- platform: hue
+  host: 192.168.2.123
+  scan_interval: 5
+  # Optional, make this unique if specifying multiple Hue hubs
+  filename: my_hue_hub_token.conf
+

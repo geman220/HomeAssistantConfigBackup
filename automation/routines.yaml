@@ -1,0 +1,299 @@
+####################################################################################################################################################################
+###                                                                   WEEKDAY MORNING ROUTINES                                                                   ###
+####################################################################################################################################################################
+
+###  4:30AM Weekday Morning Routine  ###
+###  [IF HOME] ###
+###  [Alarm] [Turn Off] Disabled  ###
+###  [Climate] [Turn Off] Away  ###
+- alias: "Weekday Morning Alarm Disabled"
+  trigger:
+    platform: time
+    after: '04:30'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.family
+        state: 'home'
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri     
+  action:
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.house_alarm
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.living_room
+        away_mode: false
+
+###  5:15AM Weekday Morning Routine  ###
+###  [IF HOME]  ###
+###  [Lights] [Turn On] All Downstairs, Stairs, and Loft  ###
+- alias: "Weekday Sunrise"
+  trigger:
+    platform: time
+    after: '05:15'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.family
+        state: 'home'
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+  action:
+    service: scene.turn_on
+    entity_id: scene.morning
+    
+###  6:15AM Weekday Morning Routine  ###
+###  [IF HOME] ###
+###  [Lights] [Turn On] Master Bedroom Lights  ###
+- alias: "Weekday Sunrise Bedroom"
+  trigger:
+    platform: time
+    after: '06:15'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.family
+        state: 'home'
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+  action:
+    service: scene.turn_on
+    entity_id: scene.morning_bedroom
+    
+
+
+####################################################################################################################################################################
+###                                                                   WEEKEND MORNING ROUTINES                                                                   ###
+####################################################################################################################################################################
+
+###  9:00AM Weekend Morning Routine  ###
+###  [IF HOME]  ###
+###  [Lights] [Turn ON] Inside Lights  ###
+- alias: "Weekend Sunrise"
+  trigger:
+    platform: time
+    after: '09:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.family
+        state: 'home'
+      - condition: time
+        weekday:
+          - sat
+          - sun
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        below: 2.5
+  action:
+    service: scene.turn_on
+    entity_id: scene.morning
+
+###  7:30AM Weekend Morning Routine  ###
+###  [IF HOME] ###
+###  [Alarm] [Turn Off] Disabled  ###
+###  [Climate] [Turn Off] Away  ###
+- alias: "Weekend Morning Alarm Disabled"
+  trigger:
+    platform: time
+    after: '07:30'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.family
+        state: 'home'
+      - condition: time
+        weekday:
+          - sat
+          - sun     
+  action:
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.house_alarm
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.living_room
+        away_mode: false
+        
+
+
+####################################################################################################################################################################
+###                                                                       NIGHTLY ROUTINES                                                                       ###
+####################################################################################################################################################################
+
+###  07:00PM Nightly Routine  ###
+###  [IF NO MOTION FOR 1 HOUR 30 MINUTES]  ###
+###  [IF HOME]  ###
+###  [Alarm] [Turn On] Armed Home  ###
+###  [Climate] [Turn On] Away  ###
+###  [Lights] [Turn Off] Inside Lights  ###
+- alias: "No One downstairs Alarm Armed Home"
+  trigger:
+    platform: state
+    entity_id: switch.motion_detector
+    state: 'off'
+    for:
+      hours: 1
+      minutes: 30
+      seconds: 0
+  condition:
+    condition: and
+    conditions:    
+      - condition: time
+        after: '19:00'
+      - condition: state
+        entity_id: group.family
+        state: 'home'        
+  action:
+    - service: scene.turn_on
+      entity_id: scene.bedtime
+    - service: alarm_control_panel.alarm_arm_home
+      entity_id: alarm_control_panel.house_alarm
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.living_room
+        away_mode: true
+        
+###  Outside Garage Lights On ###
+###  [AT SUNSET <3400] ###
+###  [Lights] [Turn On] Outside Garage Lights ###
+- alias: "Sunset Garage Lights On"
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 2.5
+  action:
+    service: scene.turn_on
+    entity_id: scene.OutsideGarageOn
+    
+###  Inside Sunset  ###
+###  [IF KODI IDLE] ###
+###  [IF HOME]  ###
+###  [Lights] [Turn On] All Downstairs and Loft  ###
+- alias: "Sunset Kodi Idle"
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 3.5
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.family
+        state: 'home'
+      - condition: state
+        entity_id: media_player.livingroom_player
+        state: 'idle'
+  action:
+    service: scene.turn_on
+    entity_id: scene.sunset
+
+###  Inside Sunset  ###
+###  [IF KODI PLAYING] ###
+###  [IF HOME]  ###
+###  [Lights] [Turn On] All Cabinet Lights  ###
+- alias: "Sunset Kodi Playing"
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 3.5
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.family
+        state: 'home'
+      - condition: state
+        entity_id: media_player.livingroom_player
+        state: 'playing'
+  action:
+    service: scene.turn_on
+    entity_id: scene.tv_playing
+    
+###  Turn On Kitchen Lights at Night if Stairs are On  ###
+- alias: "Someone is coming downstairs"
+  trigger:
+    platform: state
+    entity_id: group.stairs
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.downstairs_all_lights
+        state: 'off'
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        below: 1.0
+  action:
+    service: scene.turn_on
+    entity_id: scene.snack
+    
+###  Turn off Kitchen Lights at Night if Stairs are off  ###
+- alias: "Someone is back upstairs"
+  trigger:
+    platform: state
+    entity_id: group.stairs
+    from: 'on'
+    to: 'off'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.kitchen_pendants
+        state: 'on'
+      - condition: state
+        entity_id: group.foyer
+        state: 'off'
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        below: 1.0
+  action:
+    service: scene.turn_on
+    entity_id: scene.downstairs_off    
+    
+    
+
+####################################################################################################################################################################
+###                                                                        DAILY ROUTINES                                                                        ###
+####################################################################################################################################################################
+
+###  Sunrise  ###
+###  [AT SUNRISE >3300] ###
+###  [Lights] [Turn Off] All Lights  ###
+- alias: "Sunrise Lights Off"
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    above: 4.0
+  action:
+    service: scene.turn_on
+    entity_id: scene.daylight

@@ -1,0 +1,164 @@
+####################################################
+#                                                  #
+#                  Basic Settings                  #
+#                                                  #
+####################################################
+
+###  Global configuration  ###
+homeassistant:
+  name: Home
+  latitude: !secret home_loc_lat
+  longitude: !secret home_loc_long
+  elevation: 101
+  temperature_unit: F
+  unit_system: imperial
+  time_zone: America/New_York
+  customize: !include customized.yaml
+
+###  Zones  ###
+zone:
+  name: Home
+  latitude: !secret home_loc_lat
+  longitude: !secret home_loc_long
+  radius: 275
+  icon: mdi:home
+
+zone 2:
+  name: Store
+  latitude: !secret store_loc_lat
+  longitude: !secret store_loc_long
+  radius: 125
+  icon: mdi:shopping
+  
+###  MQTT  ###
+mqtt:
+  broker: localhost
+  port: 1883
+  client_id: HomeAssistant
+  username: !secret mqttuser
+  password: !secret mqttpassword
+  keepalive: 60
+
+###  Z-Wave  ###
+zwave:
+  usb_path: /dev/ttyACM0
+  config_path: /srv/homeassistant/lib/python3.4/site-packages/libopenzwave-0.3.2-py3.4-linux-armv7l.egg/config
+
+###  HTTP  ###
+http:
+  api_password: !secret http_password
+  ssl_certificate: !secret sslcert
+  ssl_key: !secret sslkey
+
+### IFTTT  ###
+ifttt:
+  key: !secret ifttt_key
+  
+###  BloomSky  ###
+bloomsky:
+  api_key: !secret bloomsky_api
+
+###  Garadget  ###
+cover:
+  platform: garadget
+  covers:
+      290058001151353338363333:
+        username:  !secret garage_user
+        password:  !secret garage_password
+        name:  Garage Door
+
+###  NEST  ###
+nest:
+  client_id: !secret nest_client
+  client_secret: !secret nest_secret
+
+climate:
+  platform: nest
+
+###  Harmony Remote  ###
+remote:
+  platform: harmony
+  name: Livingroom
+  host: 192.168.2.124
+
+### SmartThings Home Alarm ###
+alarm_control_panel:
+  platform: mqtt
+  state_topic: "smartthings/alarm system status/alarmSystemStatus"
+  command_topic: "smartthings/alarm system status/alarmSystemStatus"
+  qos: 0
+  username: !secret mqttuser
+  password: !secret mqttpassword
+  name: "House Alarm"
+  payload_disarm: "off"
+  payload_arm_home: "stay"
+  payload_arm_away: "away"
+
+####################################################
+#                                                  #
+#                     Includes                     #
+#                                                  #
+####################################################
+
+###  Devices  ###
+device_tracker: !include devices/device_trackers.yaml
+media_player: !include devices/media_players.yaml
+camera: !include devices/cameras.yaml
+switch: !include devices/switches.yaml
+sensor: !include devices/sensors.yaml
+light: !include devices/light.yaml
+
+###  Logger  ###
+logger: !include logger.yaml
+
+###  Groups  ###
+group: !include groups.yaml
+
+###  Scenes  ###
+scene: !include scenes.yaml
+
+###  Scripts  ###
+#script: !include scripts.yaml
+
+###  Automation  ###
+automation: !include_dir_merge_list automation
+
+###  Notification  ###
+notify: !include notify.yaml
+
+###  Weblinks  ###
+weblink: !include weblink.yaml
+
+###  Input Boolean  ###
+input_boolean: !include input_boolean.yaml
+
+####################################################
+#                                                  #
+#                     Enables                      #
+#                                                  #
+####################################################
+
+###  Sun  ###
+sun:
+
+###  Logbook  ###
+logbook:
+  exclude:
+    entities:
+      - sensor.garage_door_time_in_state
+      - sensor.garage_door_wifi_signal_strength
+
+###  History  ###
+history:
+
+###  Frontend  ###
+frontend:
+  
+### Voice Commands  ###
+conversation:
+
+###  Updater  ###
+updater:
+
+###  Discovery  ###
+discovery:

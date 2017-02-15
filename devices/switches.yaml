@@ -1,0 +1,31 @@
+- platform: wake_on_lan
+  mac_address: "D4:3D:7E:C0:0D:2C"
+  name: "Main_PC_WOL"
+  host: "192.168.2.202"
+
+- platform: command_line
+  switches:
+    pc:
+      command_on: " "
+      command_off: "net rpc shutdown -I 192.168.2.202 -U kodi%kodi"
+        
+- platform: template
+  switches:
+    pccopy:
+      value_template: '{{ states.switch.Main_Pc_Wol.state }}'
+      turn_on:
+        service: switch.turn_on
+        entity_id: switch.Main_Pc_Wol
+      turn_off:
+        service: switch.turn_off
+        entity_id: switch.pc
+
+- platform: mqtt
+  name: "Motion Detector"
+  state_topic: "smartthings/Living Room Motion Sensor/motion"
+  command_topic: "smartthings/Living Room Motion Sensor/motion"
+  payload_on: "active"
+  payload_off: "inactive"
+  retain: true
+  
+- platform: thinkingcleaner

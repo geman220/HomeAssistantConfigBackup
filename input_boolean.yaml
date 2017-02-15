@@ -1,0 +1,69 @@
+buy:
+  name: Buy on next Trip?
+  icon: mdi:checkbox-marked-circle
+milk:
+  name: Milk
+  icon: mdi:checkbox-marked-circle
+soda:
+  name: Soda
+  icon: mdi:checkbox-marked-circle
+beer:
+  name: Beer
+  icon: mdi:checkbox-marked-circle
+dog_food:
+  name: Dog Food
+  icon: mdi:checkbox-marked-circle
+toilet_paper:
+  name: Toilet Paper
+  icon: mdi:checkbox-marked-circle
+hamburger:
+  name: Hamburger
+  icon: mdi:checkbox-marked-circle
+chicken:
+  name: Chicken
+  icon: mdi:checkbox-marked-circle
+bread:
+  name: Bread
+  icon: mdi:checkbox-marked-circle
+pizza:
+  name: Pizza
+  icon: mdi:checkbox-marked-circle
+cereal:
+  name: Cereal
+  icon: mdi:checkbox-marked-circle
+butter:
+  name: Butter
+  icon: mdi:checkbox-marked-circle
+cookies:
+  name: Cookies
+  icon: mdi:checkbox-marked-circle
+papertowels:
+  name: Paper Towels
+  icon: mdi:checkbox-marked-circle
+red_bull:
+  name: Red Bull
+  icon: mdi:checkbox-marked-circle
+rice:
+  name: Rice
+  icon: mdi:checkbox-marked-circle
+potatoes:
+  name: Potatoes
+  icon: mdi:checkbox-marked-circle
+waffle:
+  name: Waffles
+  icon: mdi:checkbox-marked-circle
+corn:
+  name: Corn
+  icon: mdi:checkbox-marked-circle
+chips:
+  name: Chips
+  icon: mdi:checkbox-marked-circle
+ham:
+  name: Ham
+  icon: mdi:checkbox-marked-circle
+cheese:
+  name: Cheese
+  icon: mdi:checkbox-marked-circle
+macandcheese:
+  name: Mac and Cheese
+  icon: mdi:checkbox-marked-circle

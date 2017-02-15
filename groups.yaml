@@ -1,0 +1,320 @@
+Kitchen: 
+  entities:
+    - media_player.kitchen
+Bedroom:
+  entities:
+    - media_player.bedroom_player
+Family: 
+  entities:
+    - device_tracker.homeassistant_george
+    - device_tracker.homeassistant_michelle
+Presence:
+  entities:
+    - device_tracker.george_phone
+    - device_tracker.michelle_phone
+Living_Room_Scenes:
+  entities: 
+    - scene.livingroom_normal 
+    - scene.livingroom_dim
+    - scene.livingroom_off
+Kitchen_Scenes: 
+  entities:
+    - scene.kitchen_normal
+    - scene.kitchen_dim
+    - scene.kitchen_off
+Downstairs_Scenes:
+  entities:
+    - scene.downstairs_normal
+    - scene.downstairs_dim 
+    - scene.downstairs_off
+Stairs_Scenes:
+  entities:
+    - scene.stairs_on
+    - scene.stairs_off
+Master_Bedroom_Scenes:
+  entities:
+    - scene.master_bedroom_normal
+    - scene.master_bedroom_dim 
+    - scene.master_bedroom_off
+Weather: 
+  entities:
+    - sensor.weather_station_temperature
+    - sensor.weather_station_humidity
+    - binary_sensor.weather_station_rain
+Lights:
+  entities:
+    - scene.all_inside_lights_on
+    - scene.all_inside_lights_off
+    - scene.reset_lights
+    - scene.cooking
+    - scene.tv_playing
+Alarm:
+  entities:
+    - alarm_control_panel.house_alarm
+Livingroom_dls:
+  entities:
+    - light.livingroom_dl_bl 
+    - light.livingroom_dl_br
+    - light.livingroom_dl_fl
+    - light.livingroom_dl_fr
+Kitchen_pendants: 
+  entities:
+    - light.pendant_c
+    - light.pendant_l
+    - light.pendant_r
+Kitchen_dls:
+  entities:
+    - light.kitchen_center_dl
+Downstairs_all_lights:
+  entities: 
+    - light.livingroom_dl_bl
+    - light.livingroom_dl_br
+    - light.livingroom_dl_fl
+    - light.livingroom_dl_fr
+    - light.pendant_c
+    - light.pendant_l
+    - light.pendant_r
+    - light.foyer_lamp
+    - light.entertainment_center
+    - light.above_cabinets
+    - light.under_cab_right
+    - light.under_cab_left
+    - light.kitchen_center_dl
+Entertainment_center: 
+  entities:
+    - light.entertainment_center
+Cabinet_lights:
+  entities: 
+    - light.above_cabinets
+    - light.under_cab_right
+    - light.under_cab_left
+Stairs: 
+  entities:
+    - light.bottom_of_stairs
+    - light.middle_of_stairs
+    - light.top_of_stairs
+Foyer: 
+  entities:
+    - light.foyer_lamp
+All_lights: 
+  entities:
+    - light.livingroom_dl_bl
+    - light.livingroom_dl_br
+    - light.livingroom_dl_fl
+    - light.livingroom_dl_fr
+    - light.pendant_c
+    - light.pendant_l
+    - light.pendant_r
+    - light.above_cabinets
+    - light.entertainment_center
+    - light.bottom_of_stairs
+    - light.middle_of_stairs
+    - light.top_of_stairs
+    - light.foyer_lamp
+    - light.garage
+    - light.garage_left_outside
+    - light.garage_right_outside
+    - light.loft_lamp
+    - light.back_porch
+    - light.master_bed_bl
+    - light.master_bed_br
+    - light.master_bed_fl
+    - light.master_bed_fr
+    - light.under_cab_right
+    - light.under_cab_left
+    - light.kitchen_center_dl
+All_inside_lights:
+  entities:
+    - light.livingroom_dl_bl
+    - light.livingroom_dl_br
+    - light.livingroom_dl_fl
+    - light.livingroom_dl_fr
+    - light.pendant_c
+    - light.pendant_l
+    - light.pendant_r
+    - light.above_cabinets
+    - light.entertainment_center
+    - light.bottom_of_stairs
+    - light.middle_of_stairs
+    - light.top_of_stairs
+    - light.foyer_lamp
+    - light.garage
+    - light.loft_lamp
+    - light.back_porch
+    - light.master_bed_bl
+    - light.master_bed_br
+    - light.master_bed_fl
+    - light.master_bed_fr
+    - light.under_cab_right
+    - light.under_cab_left
+    - light.kitchen_center_dl
+Loft:
+  entities:
+    - light.loft_lamp
+Master_Bedroom:
+  entities:
+    - light.master_bed_bl
+    - light.master_bed_br
+    - light.master_bed_fl
+    - light.master_bed_fr
+Garage:
+  name: Garage Door
+  entities:
+    - cover.garage_door
+    - sensor.garage_door_status
+    - sensor.garage_door_time_in_state
+    - sensor.garage_door_wifi_signal_strength
+Garage_Outside:
+  entities:
+    - light.garage_left_outside
+    - light.garage_right_outside
+Back_Porch:
+  entities:
+    - light.back_porch
+Computers:
+  entities:
+    - switch.pccopy
+Speedtest:
+  entities:
+    - sensor.speedtest_ping
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+Links:
+  entities:
+    - weblink.HTPC_Manager
+    - weblink.dashboard
+Roomba:
+  entities:
+    - sensor.downstairsroomba_state  
+    - switch.downstairsroomba_clean
+    - switch.downstairsroomba_dock
+    - switch.downstairsroomba_find
+Automation:
+  entities:
+    - automation.media_center_playing
+    - group.Alarm_Bypass
+Alarm_Bypass:
+  entities:
+    - automation.alarm_disarmed
+    - automation.no_one_downstairs_alarm_armed_home
+    - automation.alarm_armed_away
+    - automation.alarm_morning_alarm_disabled
+Climate:
+  entities:
+    - climate.living_room
+Garage_Door:
+  entities:
+    - cover.garage_door
+
+
+
+
+    
+  ###  Shopping List   ###
+Drinks:
+  entities:
+    - input_boolean.Milk
+    - input_boolean.Soda
+    - input_boolean.red_bull
+    - input_boolean.Beer
+  
+Dinner:
+  entities:
+    - input_boolean.Hamburger
+    - input_boolean.chicken
+  
+Lunch:
+  entities:
+    - input_boolean.Pizza
+    - input_boolean.bread
+    - input_boolean.ham
+    - input_boolean.cheese
+    - input_boolean.macandcheese
+    - input_boolean.butter
+  
+Breakfast:
+  entities:
+    - input_boolean.cereal
+    - input_boolean.waffle
+
+Sides:
+  entities:
+    - input_boolean.potatoes
+    - input_boolean.corn
+    - input_boolean.rice
+  
+Misc:
+  entities:
+    - input_boolean.Dog_Food
+    - input_boolean.Toilet_Paper
+    - input_boolean.papertowels
+  
+Snacks:
+  entities:
+    - input_boolean.cookies
+    - input_boolean.chips
+  
+
+
+
+
+  
+##  VIEWS  ##
+
+default_view:
+  name: DEFAULT
+  icon: mdi:home
+  view: yes
+  entities:
+    - group.lights
+    - camera.cvillestation1
+    - group.family
+    - group.weather
+    - group.alarm
+    - group.climate
+Downstairs:
+  name: Downstairs
+  icon: mdi:numeric-1-box-outline
+  view: yes
+  entities:
+    - group.downstairs_scenes
+    - group.kitchen_scenes
+    - group.living_room_scenes
+    - media_player.kitchen
+    - media_player.livingroom_player
+    - group.stairs_scenes
+Upstairs:
+  name: Upstairs
+  icon: mdi:numeric-2-box-multiple-outline
+  view: yes
+  entities:
+    - media_player.bedroom_player
+    - group.stairs_scenes
+    - group.Master_Bedroom_Scenes
+    - group.loft
+Computer_Status:
+  name: Status
+  icon: mdi:desktop-tower
+  view: yes
+  entities:
+    - group.Computers
+    - group.all_lights_2
+    - group.speedtest
+    - group.links
+    - group.roomba
+    - group.automation
+    - group.garage
+    - media_player.music
+Shopping:
+  name: Shopping List
+  icon: mdi:shopping
+  view: yes
+  entities:
+    - input_boolean.Buy
+    - group.drinks
+    - group.breakfast
+    - group.lunch
+    - group.dinner
+    - group.sides
+    - group.snacks
+    - group.misc

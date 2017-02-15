@@ -1,0 +1,31 @@
+###  Notify Grocery List If George Is At Store  ###
+- alias: "Send shopping list to George"
+  trigger:
+    platform: state
+    entity_id: device_tracker.geman220_george
+    to: 'Store'
+  condition:
+    condition: state
+    entity_id: input_boolean.buy
+    state: 'on'
+  action:
+    service: notify.notify
+    data:
+      message: " The House Needs : {% if is_state('input_boolean.milk', 'on') %} - Milk  {% endif %}{% if is_state('input_boolean.soda', 'on') %} - Soda  {% endif %}{% if is_state('input_boolean.red_bull', 'on') %} - Red Bull  {% endif %}{% if is_state('input_boolean.beer', 'on') %} - Beer  {% endif %}{% if is_state('input_boolean.hamburger', 'on') %} - Hamburger  {% endif %}{% if is_state('input_boolean.chicken', 'on') %} - Chicken  {% endif %}{% if is_state('input_boolean.pizza', 'on') %} - Pizza  {% endif %}{% if is_state('input_boolean.bread', 'on') %} - Bread  {% endif %}{% if is_state('input_boolean.ham', 'on') %} - Ham  {% endif %}{% if is_state('input_boolean.cheese', 'on') %} - Cheese  {% endif %}{% if is_state('input_boolean.macandcheese', 'on') %} - Mac and Cheese  {% endif %}{% if is_state('input_boolean.butter', 'on') %} - Butter  {% endif %}{% if is_state('input_boolean.cereal', 'on') %} - Cereal  {% endif %}{% if is_state('input_boolean.waffle', 'on') %} - Waffle  {% endif %}{% if is_state('input_boolean.potatoes', 'on') %} - Potatoes  {% endif %}{% if is_state('input_boolean.corn', 'on') %} - Corn  {% endif %}{% if is_state('input_boolean.rice', 'on') %} - Rice  {% endif %}{% if is_state('input_boolean.dog_food', 'on') %} - Dog Food  {% endif %}{% if is_state('input_boolean.toilet_paper', 'on') %} - Toilet Paper  {% endif %}{% if is_state('input_boolean.papertowels', 'on') %} - Paper Towels  {% endif %}{% if is_state('input_boolean.cookies', 'on') %} - Cookies  {% endif %}{% if is_state('input_boolean.chips', 'on') %} - Chips  {% endif %}!"
+      target: "channel/svilleautomation1337"
+      
+###  Notify Grocery List If Michelle Is At Store  ###
+- alias: "Send shopping list to Michelle"
+  trigger:
+    platform: state
+    entity_id: device_tracker.michelle_michelle
+    to: 'Store'
+  condition:
+    condition: state
+    entity_id: input_boolean.buy
+    state: 'on'
+  action:
+    service: notify.notify
+    data:
+      message: " The House Needs : {% if is_state('input_boolean.milk', 'on') %} - Milk  {% endif %}{% if is_state('input_boolean.soda', 'on') %} - Soda  {% endif %}{% if is_state('input_boolean.red_bull', 'on') %} - Red Bull  {% endif %}{% if is_state('input_boolean.beer', 'on') %} - Beer  {% endif %}{% if is_state('input_boolean.hamburger', 'on') %} - Hamburger  {% endif %}{% if is_state('input_boolean.chicken', 'on') %} - Chicken  {% endif %}{% if is_state('input_boolean.pizza', 'on') %} - Pizza  {% endif %}{% if is_state('input_boolean.bread', 'on') %} - Bread  {% endif %}{% if is_state('input_boolean.ham', 'on') %} - Ham  {% endif %}{% if is_state('input_boolean.cheese', 'on') %} - Cheese  {% endif %}{% if is_state('input_boolean.macandcheese', 'on') %} - Mac and Cheese  {% endif %}{% if is_state('input_boolean.butter', 'on') %} - Butter  {% endif %}{% if is_state('input_boolean.cereal', 'on') %} - Cereal  {% endif %}{% if is_state('input_boolean.waffle', 'on') %} - Waffle  {% endif %}{% if is_state('input_boolean.potatoes', 'on') %} - Potatoes  {% endif %}{% if is_state('input_boolean.corn', 'on') %} - Corn  {% endif %}{% if is_state('input_boolean.rice', 'on') %} - Rice  {% endif %}{% if is_state('input_boolean.dog_food', 'on') %} - Dog Food  {% endif %}{% if is_state('input_boolean.toilet_paper', 'on') %} - Toilet Paper  {% endif %}{% if is_state('input_boolean.papertowels', 'on') %} - Paper Towels  {% endif %}{% if is_state('input_boolean.cookies', 'on') %} - Cookies  {% endif %}{% if is_state('input_boolean.chips', 'on') %} - Chips  {% endif %}!"
+      target: "channel/svilleautomation1337"

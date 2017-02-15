@@ -1,0 +1,504 @@
+- name: TV Playing
+  entities:
+    group.livingroom_dls:
+      state: off
+      transition: 2
+    group.kitchen_pendants:
+      state: off
+      transition: 2
+    group.kitchen_dls:
+      state: off
+      transition: 2
+    group.entertainment_center:
+      state: on
+      transition: 2
+      brightness: 255
+      #xy_color: [ 0.4448, 0.4066 ]  
+    group.cabinet_lights:
+      state: on
+      transition: 2
+      brightness: 60
+      xy_color: [0.6142, 0.3157]
+      color_temp: 410
+    group.foyer:
+      state: on
+      transition: 2
+      brightness: 60
+      xy_color: [0.1653, 0.115]
+      color_temp: 154            
+            
+- name: TV Paused
+  entities:
+    group.livingroom_dls:
+      state: on
+      transition: 2
+      brightness: 10
+      #xy_color: [ 0.4448, 0.4066 ]
+    group.kitchen_pendants:
+      state: on
+      transition: 2
+      brightness: 30
+      #xy_color: [ 0.4448, 0.4066 ]
+    group.kitchen_dls:
+      state: off
+      transition: 2
+    group.entertainment_center:
+      state: on
+      transition: 2
+      brightness: 255
+      xy_color: [0.2988, 0.4192]
+      color_temp: 154
+    group.cabinet_lights:
+      state: on
+      transition: 2
+      brightness: 255
+      xy_color: [0.6142, 0.3157]
+      color_temp: 410 
+    group.foyer:
+      state: on
+      transition: 2
+      brightness: 255
+      xy_color: [0.1653, 0.115]
+      color_temp: 154            
+
+- name: Livingroom normal
+  entities:
+    group.livingroom_dls:
+      state: on
+      transition: 2
+      brightness: 255
+ #     xy_color: [0.445, 0.4067]
+ #     color_temp: 346
+    group.entertainment_center:
+      state: on
+      transition: 2
+      brightness: 255
+      xy_color: [0.2988, 0.4192]
+      color_temp: 154
+      
+- name: Livingroom dim
+  entities:
+    group.livingroom_dls:
+      state: on
+      transition: 2
+      brightness: 30
+#      xy_color: [0.445, 0.4067]
+#      color_temp: 346
+    group.entertainment_center:
+      state: on
+      transition: 2
+      brightness: 100
+      xy_color: [0.2988, 0.4192]
+      color_temp: 154
+
+- name: Livingroom Off
+  entities:
+    group.livingroom_dls:
+      state: off
+      transition: 2
+    group.entertainment_center:
+      state: off
+      transition: 2
+
+- name: Cooking
+  entities:
+    group.kitchen_pendants:
+      state: on
+      transition: 2
+      brightness: 30
+#      xy_color: [0.445, 0.4067]
+#      color_temp: 346
+    group.kitchen_dls:
+      state: on
+      transition: 2
+      brightness: 60
+#      xy_color: [0.445, 0.4067]
+#      color_temp: 346
+    group.cabinet_lights:
+      state: on
+      transition: 2
+      brightness: 60
+      xy_color: [0.6142, 0.3157]
+      color_temp: 410
+
+- name: Kitchen normal
+  entities:
+    group.kitchen_pendants:
+      state: on
+      transition: 2
+      brightness: 255
+ #     xy_color: [0.445, 0.4067]
+ #     color_temp: 346
+    group.kitchen_dls:
+      state: off
+      transition: 2
+    group.cabinet_lights:
+      state: on
+      transition: 2
+      brightness: 255
+#      xy_color: [0.6142, 0.3157]
+#      color_temp: 410
+            
+- name: Kitchen dim
+  entities:
+    group.kitchen_pendants:
+      state: on
+      transition: 2
+      brightness: 30
+#      xy_color: [0.445, 0.4067]
+#      color_temp: 346
+    group.kitchen_dls:
+      state: off
+      transition: 2
+    group.cabinet_lights:
+      state: on
+      transition: 2
+      brightness: 30
+#      xy_color: [0.6142, 0.3157]
+#      color_temp: 410
+
+- name: Kitchen Off
+  entities:
+    group.kitchen_pendants:
+      state: off
+      transition: 2
+    group.kitchen_dls:
+      state: off
+      transition: 2
+    group.cabinet_lights:
+      state: off
+      transition: 2
+            
+- name: Downstairs Normal
+  entities:
+    group.livingroom_dls:
+      state: on
+      transition: 2
+      brightness: 255
+#      xy_color: [0.445, 0.4067]
+    group.kitchen_pendants:
+      state: on
+      transition: 2
+      brightness: 255
+#      xy_color: [0.445, 0.4067]
+    group.kitchen_dls:
+      state: off
+      transition: 2
+    group.entertainment_center:
+      state: on
+      transition: 2
+      brightness: 255
+      xy_color: [ 0.2988, 0.4192 ]
+      color_temp: 154
+    group.cabinet_lights:
+      state: on
+      transition: 2
+      brightness: 255
+      xy_color: [ 0.6142, 0.3157 ]
+      color_temp: 410 
+    group.foyer:
+      state: on
+      transition: 2
+      brightness: 255
+      xy_color: [ 0.1653, 0.115 ]
+      color_temp: 154            
+
+- name: Downstairs dim
+  entities:
+    group.livingroom_dls:
+      state: on
+      transition: 3600 
+      brightness: 30
+#      xy_color: [0.445, 0.4067]
+#      color_temp: 346
+    group.kitchen_pendants:
+      state: on
+      transition: 5
+      brightness: 30
+#      xy_color: [0.445, 0.4067]
+#      color_temp: 346
+    group.kitchen_dls:
+      state: off
+      transition: 5
+    group.entertainment_center:
+      state: on
+      transition: 2
+      brightness: 30
+      xy_color: [0.2988, 0.4192]
+      color_temp: 154
+    group.cabinet_lights:
+      state: on
+      transition: 2
+      brightness: 100
+      xy_color: [0.6142, 0.3157]
+      color_temp: 410 
+    group.foyer:
+      state: on
+      transition: 2
+      brightness: 30
+      xy_color: [0.1653, 0.115]
+      color_temp: 154            
+
+- name: Downstairs Off
+  entities:
+    group.downstairs_all_lights:
+      state: off
+      transition: 2
+
+- name: Master Bedroom Normal
+  entities:
+    group.master_bedroom:
+      state: on
+      transition: 10 
+      brightness: 255
+ #     xy_color: [0.445, 0.4067]
+ #     color_temp: 346
+
+      
+- name: Master Bedroom dim
+  entities:
+    group.master_bedroom:
+      state: on
+      transition: 10 
+      brightness: 30
+ #     xy_color: [ 0.445, 0.4067 ]
+ #     color_temp: 346
+
+
+- name: Master Bedroom Off
+  entities:
+    group.master_bedroom:
+      state: off
+      transition: 10 
+ 
+- name: All Inside Lights On
+  entities:
+    group.all_inside_lights:
+      state: on
+      transition: 10
+
+- name: All Inside Lights Off
+  entities:
+    group.all_inside_lights:
+      state: off
+      transition: 10
+ 
+- name: Sunset
+  entities:
+    group.kitchen_pendants:
+      state: on
+      transition: 3600
+      brightness: 255
+ #     xy_color: [0.445, 0.4067]
+ #     color_temp: 346
+    group.kitchen_dls:
+      state: off
+      transition: 3600
+    group.entertainment_center:
+      state: on
+      transition: 3600  
+      brightness: 255
+      xy_color: [0.2988, 0.4192]
+      color_temp: 154
+    group.cabinet_lights:
+      state: on
+      transition: 3600 
+      brightness: 255
+      xy_color: [0.6142, 0.3157]
+      color_temp: 410
+    group.foyer:
+      state: on
+      transition: 3600 
+      brightness: 255
+      xy_color: [0.1653, 0.115]
+      color_temp: 154
+    group.livingroom_dls:
+      state: on
+      transition: 3600 
+      brightness: 255
+#      xy_color: [0.445, 0.4067]
+#      color_temp: 346
+    group.loft:
+      state: on
+      transition: 3600 
+      brightness: 255
+ #     xy_color: [0.445, 0.4067]
+ #     color_temp: 346
+
+- name: Reset Lights
+  entities:
+    group.kitchen_pendants:
+      state: on
+      transition: 5
+      brightness: 255
+      xy_color: [0.445, 0.4067]
+      color_temp: 346
+    group.kitchen_dls:
+      state: on
+      transition: 5
+      brightness: 255
+      xy_color: [0.445, 0.4067]
+      color_temp: 346
+    group.entertainment_center:
+      state: on
+      transition: 5 
+      brightness: 255
+      xy_color: [0.2988, 0.4192]
+      color_temp: 154
+    group.cabinet_lights:
+      state: on
+      transition: 5
+      brightness: 255
+      xy_color: [0.6142, 0.3157]
+      color_temp: 410
+    group.foyer:
+      state: on
+      transition: 5
+      brightness: 255
+      xy_color: [0.1653, 0.115]
+      color_temp: 154
+    group.livingroom_dls:
+      state: on
+      transition: 5
+      brightness: 255
+      xy_color: [0.445, 0.4067]
+      color_temp: 346
+    group.loft:
+      state: on
+      transition: 5
+      brightness: 255
+      xy_color: [0.445, 0.4067]
+      color_temp: 346
+
+- name: OutsideGarageOn
+  entities:
+    group.garage_outside:
+      state: on
+      transition: 3600
+      brightness: 255
+ 
+- name: Rainy Day
+  entities:
+    group.kitchen_pendants:
+      state: on
+      transition: 60
+      brightness: 125
+    group.kitchen_dls:
+      state: off
+      transition: 60
+    group.entertainment_center:
+      state: on
+      transition: 60  
+      brightness: 255
+      xy_color: [0.2988, 0.4192]
+      color_temp: 154
+    group.cabinet_lights:
+      state: on
+      transition: 60 
+      brightness: 255
+      xy_color: [0.6142, 0.3157]
+      color_temp: 410
+    group.foyer:
+      state: on
+      transition: 60 
+      brightness: 125
+      xy_color: [0.1653, 0.115]
+      color_temp: 154
+    group.livingroom_dls:
+      state: on
+      transition: 60 
+      brightness: 50
+      
+- name: Morning
+  entities:
+    group.kitchen_pendants:
+      state: on
+      transition: 1800
+      brightness: 175
+#      xy_color: [0.445, 0.4067]
+#      color_temp: 346
+    group.kitchen_dls:
+      state: off
+      transition: 1800
+    group.livingroom_dls:
+      state: on
+      transition: 1800
+      brightness: 175
+#      xy_color: [0.445, 0.4067]
+#      color_temp: 346
+    group.cabinet_lights:
+      state: on
+      transition: 1800
+      brightness: 175
+      xy_color: [0.6142, 0.3157]
+      color_temp: 410
+    group.foyer:
+      state: on
+      transition: 1800
+      brightness: 175
+      xy_color: [0.1653, 0.115]
+      color_temp: 154
+    group.stairs:
+      state: on
+      transition: 1800
+      brightness: 175
+#      xy_color: [0.445, 0.4067]
+#      color_temp: 346
+    group.loft:
+      state: on
+      transition: 3600 
+      brightness: 100
+      xy_color: [0.445, 0.4067]
+      color_temp: 346
+    
+- name: Morning Bedroom
+  entites:    
+    group.master_bedroom:
+      state: on
+      transition: 3600 
+      brightness: 150
+#      xy_color: [0.445, 0.4067]
+#      color_temp: 346
+
+- name: Daylight
+  entities:
+    group.all_lights_2:
+      state: off
+      transition: 2
+      
+- name: Bedtime
+  entities:
+    group.downstairs_all_lights:
+      state: off
+    group.stairs:
+      state: off
+    group.loft:
+      state: off
+
+- name: Snack
+  entities:
+    group.kitchen_pendants:
+      state: on
+      transition: 2
+      brightness: 30
+      #xy_color: [ 0.4448, 0.4066 ]            
+    group.cabinet_lights:
+      state: on
+      transition: 2
+      brightness: 30
+      xy_color: [0.6142, 0.3157]
+      color_temp: 410
+
+- name: Stairs On
+  entities:
+    group.stairs:
+      state: on
+      transition: 2
+      brightness: 255
+#      xy_color: [0.445, 0.4067]
+#      color_temp: 346
+      
+- name: Stairs Off
+  entities:
+    group.stairs:
+      state: off

@@ -1,0 +1,64 @@
+####################################################################################################################################################################
+###                                                                      LIVING ROOM ROUTINES                                                                    ###
+####################################################################################################################################################################
+
+###  Dim Lights If Livingroom Playing  ###
+###  Living Room Media Playing  ###
+###  [IF NIGHT <3200]  ###
+###  [Lights] [Turn Off] Downstairs and Kitchen  ### 
+- alias: "Media Center Playing"
+  trigger:
+    platform: state
+    entity_id: media_player.livingroom_player
+    to: 'playing'
+  condition:
+    condition: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 2.5
+  action:
+    service: scene.turn_on
+    entity_id: scene.tv_playing
+
+###  Living Room Media Paused  ###
+###  [IF NIGHT <3200]  ###
+###  [Lights] [Turn On] Living Room & Kitchen [DIM]  ### 
+- alias: "Media Center Stopped/Paused"
+  trigger:
+    platform: state
+    entity_id: media_player.livingroom_player
+    to: 'paused'
+  condition:
+    condition: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 2.5
+  action:
+    service: scene.turn_on
+    entity_id: scene.tv_paused
+      
+###  Living Room Media Stopped  ###
+###  [IF NIGHT <3200]  ###
+###  [Lights] [Turn On] Living Room & Kitchen [DIM]  ### 
+- alias: "Media Center idle"
+  trigger:
+    platform: state
+    entity_id: media_player.livingroom_player
+    to: 'idle'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 20
+  condition:
+    condition: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 2.5
+  action:
+    service: scene.turn_on
+    entity_id: scene.tv_paused
+
+####################################################################################################################################################################
+###                                                                    MASTER BEDROOM ROUTINES                                                                   ###
+####################################################################################################################################################################
+

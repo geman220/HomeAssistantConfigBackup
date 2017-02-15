@@ -1,0 +1,148 @@
+sensor.garage_door_time_in_state:
+  icon: mdi:timer-sand
+sensor.garage_door_wifi_signal_strength:
+  icon: mdi:wifi
+scene.livingroom_normal:
+  friendly_name: Livingroom On
+  icon: mdi:lightbulb
+scene.livingroom_dim:
+  friendly_name: Livingroom Dim
+  icon: mdi:lightbulb
+scene.livingroom_off:
+  friendly_name: Livingroom Off
+  icon: mdi:lightbulb-outline 
+scene.kitchen_normal:
+  friendly_name: Kitchen On
+  icon: mdi:lightbulb
+scene.kitchen_dim:
+  friendly_name: Kitchen Dim
+  icon: mdi:lightbulb
+scene.kitchen_off:
+  friendly_name: Kitchen Off
+  icon: mdi:lightbulb-outline  
+scene.downstairs_normal:
+  friendly_name: Downstairs On
+  icon: mdi:lightbulb
+scene.stairs_off:
+  friendly_name: Stairs Off
+  icon: mdi:lightbulb-outline
+scene.stairs_on:
+  friendly_name: Stairs On
+  icon: mdi:lightbulb
+scene.downstairs_dim:
+  friendly_name: Downstairs Dim
+  icon: mdi:lightbulb
+scene.downstairs_off:
+  friendly_name: Downstairs Off
+  icon: mdi:lightbulb-outline
+scene.master_bedroom_normal:
+  friendly_name: Master Bedroom On
+  icon: mdi:lightbulb
+scene.master_bedroom_dim:
+  friendly_name: Master Bedroom Dim
+  icon: mdi:lightbulb
+group.garage_door:
+  friendly_name: Garage Door
+scene.master_bedroom_off:
+  friendly_name: Master Bedroom Off
+  icon: mdi:lightbulb-outline     
+device_tracker.geman220_george:
+  friendly_name: George
+  entity_picture: https://www.dropbox.com/s/okyczcohde7tpl8/George.jpg?raw=1
+device_tracker.michelle_michelle:
+  friendly_name: Michelle
+  entity_picture: https://www.dropbox.com/s/kd6hqabtdeqvjc2/Michelle.jpg?raw=1
+binary_sensor.weather_station_rain:
+  friendly_name: 'Rainfall'
+  icon: mdi:weather-rainy
+sensor.weather_station_humidity:
+  friendly_name: 'Outdoor Humidity'
+  icon: mdi:water-percent
+sensor.weather_station_temperature:
+  friendly_name: 'Outdoor Temp'
+  icon: mdi:temperature-fahrenheit
+media_player.livingroom_player:
+  icon: mdi:projector
+media_player.bedroom_player:
+  icon: mdi:television
+media_player.kitchen:
+  icon: mdi:radio
+group.living_room_scenes:
+  friendly_name: 'Living Room Scenes'
+group.alarm_bypass:
+  friendly_name: 'Bypass Alarm Automation'
+  icon: mdi:alarm-off
+group.master_bedroom_scenes:
+  friendly_name: 'Master Bedroom Scenes'
+group.kitchen_scenes:
+  friendly_name: 'Kitchen Scenes'
+group.stairs_scenes:
+  friendly_name: 'Stairs'
+group.downstairs_all_lights:
+  friendly_name: 'Downstairs All Lights'
+  hidden: 'true'
+group.Downstairs_Scenes:
+  friendly_name: 'Downstairs Scenes'
+group.living_room:
+  friendly_name: 'Living Room'
+group.livingroom_dls:
+  hidden: 'true'  
+group.kitchen_pendants:
+  hidden: 'true'
+scene.morning:
+  hidden: 'true'
+scene.sunset:
+  hidden: 'true'
+scene.tv_playing:
+  hidden: 'true'
+scene.tv_paused:
+  hidden: 'true'      
+scene.daylight:
+  hidden: 'true'
+binary_sensor.weather_station_night:
+  hidden: 'true'
+sensor.weather_station_uvindex:
+  hidden: 'true'
+sensor.weather_station_pressure:
+  hidden: 'true'
+sensor.weather_station_luminance:
+  hidden: 'true'
+sun.sun:
+  hidden: 'true'
+scene.all_inside_lights_on:
+  icon: mdi:lightbulb
+scene.all_inside_lights_off:
+  icon: mdi:lightbulb-outline
+scene.Sunset:
+  icon: mdi:weather-sunset-down
+scene.reset_lights:
+  friendly_name: Reset Lights
+  icon: mdi:lightbulb-outline
+switch.pccopy:
+  icon: mdi:monitor
+  friendly_name: Main PC
+group.all_lights_2:
+  friendly_name: 'All Lights'
+sensor.speedtest_ping:
+  icon: mdi:speedometer
+  friendly_name: Ping
+sensor.speedtest_download:
+  icon: mdi:download
+  friendly_name: Download
+sensor.speedtest_upload:
+  icon: mdi:upload
+  friendly_name: Upload
+sensor.downstairsroomba_state:
+  icon: mdi:help
+  friendly_name: Downstairs Roomba State
+switch.downstairsroomba_clean:
+  icon: mdi:clock-start
+  friendly_name: Downstairs Roomba Clean
+switch.downstairsroomba_dock:
+  icon: mdi:home
+  friendly_name: Downstairs Roomba Dock
+switch.downstairsroomba_find:
+  icon: mdi:map-marker
+  friendly_name: Downstairs Roomba Find
+input_boolean.Buy:
+  friendly_name: Buy?

@@ -1,0 +1,25 @@
+###  Livingroom Kodi Player  ###
+- platform: kodi
+  host: 192.168.2.253
+  port: 8080
+  name: Livingroom Player
+  username: !secret living_kodi_username
+  password: !secret living_kodi_password
+  
+###  Master Bedroom Kodi Player  ###
+- platform: kodi
+  host: 192.168.2.189
+  port: 9393
+  name: Bedroom Player
+  username: !secret bed_kodi_username
+  password: !secret bed_kodi_password
+  
+###  Kitchen Sonos Play5  ###
+- platform: sonos
+
+###  Google Play Media Desktop  ###  
+- platform: gpmdp
+  host: !secret house_ip
+  name: Music
+
+- platform: cast

@@ -1,0 +1,7 @@
+entities:
+  - name: HTPC Manager
+    url: !secret htpc_url
+    icon: mdi:windows
+  - name: Dashboard
+    url: !secret dashboard_url
+    icon: mdi:view-dashboard
