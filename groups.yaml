@@ -36,6 +36,9 @@ Master_Bedroom_Scenes:
     - scene.master_bedroom_normal
     - scene.master_bedroom_dim 
     - scene.master_bedroom_off
+Fans:
+  entities:
+    - switch.ge_12722_onoff_relay_switch_switch_4_0
 Weather: 
   entities:
     - sensor.weather_station_temperature
@@ -205,8 +208,11 @@ Climate:
 Garage_Door:
   entities:
     - cover.garage_door
-
-
+Doors:
+  entities:
+    - sensor.garage_door_status_cleaned
+    - sensor.sensative_strips_sensor_2_0_cleaned
+    - sensor.sensative_strips_sensor_3_0_cleaned
 
 
     
@@ -272,6 +278,7 @@ default_view:
     - group.weather
     - group.alarm
     - group.climate
+    - group.garage
 Downstairs:
   name: Downstairs
   icon: mdi:numeric-1-box-outline
@@ -292,6 +299,7 @@ Upstairs:
     - group.stairs_scenes
     - group.Master_Bedroom_Scenes
     - group.loft
+    - group.fans
 Computer_Status:
   name: Status
   icon: mdi:desktop-tower
@@ -303,8 +311,9 @@ Computer_Status:
     - group.links
     - group.roomba
     - group.automation
-    - group.garage
     - media_player.music
+    - group.fans
+    - group.doors
 Shopping:
   name: Shopping List
   icon: mdi:shopping

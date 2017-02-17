@@ -146,3 +146,15 @@ switch.downstairsroomba_find:
   friendly_name: Downstairs Roomba Find
 input_boolean.Buy:
   friendly_name: Buy?
+switch.ge_12722_onoff_relay_switch_switch_4_0:
+  friendly_name: Master Bedroom Fan
+  icon: mdi:fan
+sensor.sensative_strips_sensor_2_0_cleaned:
+  icon: mdi:login
+sensor.sensative_strips_sensor_3_0_cleaned:
+  icon: mdi:login
+cover.garage_door:
+  friendly_name: Garage Door
+  icon: mdi:garage
+sensor.garage_door_status_cleaned:
+  icon: mdi:garage

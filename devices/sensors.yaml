@@ -19,7 +19,7 @@
 - platform: template
   sensors:
     garage_door_status:
-      friendly_name: 'State of the door'
+      friendly_name: 'Garage Door'
       value_template: '{{ states.cover.garage_door.state }}'
     garage_door_time_in_state:
       friendly_name: 'Since'
@@ -28,3 +28,12 @@
       friendly_name: 'WiFi strength'
       value_template: '{{ states.cover.garage_door.attributes["wifi signal strength (dB)"] }}'
       unit_of_measurement: 'dB'
+    sensative_strips_sensor_2_0_cleaned:
+      friendly_name: 'Garage Entrance'
+      value_template: "{{ 'closed' if is_state('binary_sensor.sensative_strips_sensor_2_0', 'off') else 'open' }}"
+    sensative_strips_sensor_3_0_cleaned:
+      friendly_name: 'Back Door'
+      value_template: "{{ 'closed' if is_state('binary_sensor.sensative_strips_sensor_3_0', 'off') else 'open' }}"
+    garage_door_status_cleaned:
+      friendly_name: 'Garage Door'
+      value_template: '{{ states.cover.garage_door.state }}'
