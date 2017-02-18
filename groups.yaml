@@ -39,6 +39,10 @@ Master_Bedroom_Scenes:
 Fans:
   entities:
     - switch.ge_12722_onoff_relay_switch_switch_4_0
+    - switch.ge_12722_onoff_relay_switch_switch_6_0
+Motion_Sensors:
+  entities:
+    - sensor.aeotec_zw100_multisensor_6_burglar_5_10_cleaned
 Weather: 
   entities:
     - sensor.weather_station_temperature
@@ -314,6 +318,7 @@ Computer_Status:
     - media_player.music
     - group.fans
     - group.doors
+    - group.motion_sensors
 Shopping:
   name: Shopping List
   icon: mdi:shopping

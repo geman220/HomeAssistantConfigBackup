@@ -32,32 +32,6 @@
 ###  [IF ALARM IS ARMED] ###
 ###  [IF FAMILY IS NOT HOME]  ###
 ###  [Alarm] [Turn Off] Disarmed  ###
-#- alias: "Garage Door Opened Alarm Disarmed"
-#  trigger:
-#    platform: state
-#    entity_id: cover.garage_door
-#    from: 'closed'
-#    to: 'open'
-#  condition:
-#    condition: or
-#    conditions:    
-#      - condition: state
-#        entity_id: alarm_control_panel.house_alarm
-#        state: 'armed_away'
-#      - condition: state
-#        entity_id: alarm_control_panel.house_alarm
-#        state: 'armed_home'
-#      - condition: state
-#        entity_id: group.family
-#        state: 'not_home'
-#  action:
-#    service: alarm_control_panel.alarm_disarm
-#    entity_id: alarm_control_panel.house_alarm
-    
-###  Alarm Automation Home Via Garage Trigger  ###
-###  [IF ALARM IS ARMED] ###
-###  [IF FAMILY IS NOT HOME]  ###
-###  [Alarm] [Turn Off] Disarmed  ###
 - alias: "Garage Door Opened Alarm Disarmed"
   trigger:
     platform: state
@@ -91,9 +65,8 @@
     to: 'home'
   condition:
     condition: numeric_state
-    entity_id: sun.sun
-    value_template: '{{ state.attributes.elevation }}'
-    below: 2.5
+    entity_id: sensor.cvillestation1_luminance
+    below: 1800
   action:
     service: scene.turn_on
     entity_id: scene.downstairs_normal
@@ -111,9 +84,8 @@
     condition: and
     conditions:    
       - condition: numeric_state
-        entity_id: sun.sun
-        value_template: '{{ state.attributes.elevation }}'
-        below: 2.5
+        entity_id: sensor.cvillestation1_luminance
+        below: 1800
       - condition: state
         entity_id: group.family
         state: 'not_home'

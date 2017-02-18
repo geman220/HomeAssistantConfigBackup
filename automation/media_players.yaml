@@ -13,9 +13,8 @@
     to: 'playing'
   condition:
     condition: numeric_state
-    entity_id: sun.sun
-    value_template: '{{ state.attributes.elevation }}'
-    below: 2.5
+    entity_id: sensor.cvillestation1_luminance
+    below: 1800
   action:
     service: scene.turn_on
     entity_id: scene.tv_playing
@@ -30,9 +29,8 @@
     to: 'paused'
   condition:
     condition: numeric_state
-    entity_id: sun.sun
-    value_template: '{{ state.attributes.elevation }}'
-    below: 2.5
+    entity_id: sensor.cvillestation1_luminance
+    below: 1800
   action:
     service: scene.turn_on
     entity_id: scene.tv_paused
@@ -51,9 +49,8 @@
       seconds: 20
   condition:
     condition: numeric_state
-    entity_id: sun.sun
-    value_template: '{{ state.attributes.elevation }}'
-    below: 2.5
+    entity_id: sensor.cvillestation1_luminance
+    below: 1800
   action:
     service: scene.turn_on
     entity_id: scene.tv_paused

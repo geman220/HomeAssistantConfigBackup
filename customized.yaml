@@ -1,3 +1,5 @@
+alarm_control_panel.house_alarm:
+  friendly_name: Alarm System
 sensor.garage_door_time_in_state:
   icon: mdi:timer-sand
 sensor.garage_door_wifi_signal_strength:
@@ -148,6 +150,9 @@ input_boolean.Buy:
   friendly_name: Buy?
 switch.ge_12722_onoff_relay_switch_switch_4_0:
   friendly_name: Master Bedroom Fan
+  icon: mdi:fan
+switch.ge_12722_onoff_relay_switch_switch_6_0:
+  friendly_name: Office Fan
   icon: mdi:fan
 sensor.sensative_strips_sensor_2_0_cleaned:
   icon: mdi:login

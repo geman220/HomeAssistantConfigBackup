@@ -1,0 +1,61 @@
+timed_garage_light:
+  alias: "Turn on lamp and set timer"
+  sequence:
+    - service: script.turn_off
+      data:
+         entity_id: script.garage_timer_off
+    - service: light.turn_on
+      data:
+        entity_id: light.garage
+    - service: script.turn_on
+      data:
+        entity_id: script.garage_timer_off
+
+garage_timer_off:
+  alias: "Turn off lamp after 10 minutes"
+  sequence:
+    - delay:
+        minutes: 10
+    - service: light.turn_off
+      data:
+        entity_id: light.garage
+
+timed_porch_light:
+  alias: "Turn on lamp and set timer"
+  sequence:
+    - service: script.turn_off
+      data:
+         entity_id: script.porch_timer_off
+    - service: light.turn_on
+      data:
+        entity_id: light.porch
+    - service: script.turn_on
+      data:
+        entity_id: script.porch_timer_off
+
+porch_timer_off:
+  alias: "Turn off lamp after 10 minutes"
+  sequence:
+    - delay:
+        minutes: 10
+    - service: light.turn_off
+      data:
+        entity_id: light.porch
+
+alarm_triggered:
+  alias: "House Alarm Triggered While Away"
+  sequence:
+    - event: LOGBOOK_ENTRY
+      event_data:
+        name: ALARM EVENT
+        message: Alarm triggered.
+    - service: notify.notify
+      data:
+        message: "ALARM - TRIGGERED. Lights triggered."
+    - service: homeassistant.turn_on
+      data:
+        entity_id: group.downstairs_all_lights
+        brightness: 255
+        rgb_color: [255,0,0]
+    - delay:
+        minutes: 60

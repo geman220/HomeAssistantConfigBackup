@@ -95,16 +95,8 @@ remote:
 
 ### SmartThings Home Alarm ###
 alarm_control_panel:
-  platform: mqtt
-  state_topic: "smartthings/alarm system status/alarmSystemStatus"
-  command_topic: "smartthings/alarm system status/alarmSystemStatus"
-  qos: 0
-  username: !secret mqttuser
-  password: !secret mqttpassword
-  name: "House Alarm"
-  payload_disarm: "off"
-  payload_arm_home: "stay"
-  payload_arm_away: "away"
+  - platform: manual
+    name: house_alarm
 
 ####################################################
 #                                                  #
@@ -130,7 +122,7 @@ group: !include groups.yaml
 scene: !include scenes.yaml
 
 ###  Scripts  ###
-#script: !include scripts.yaml
+script: !include scripts/scripts.yaml
 
 ###  Automation  ###
 automation: !include_dir_merge_list automation

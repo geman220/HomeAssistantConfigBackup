@@ -1,0 +1,43 @@
+- alias: "Alarm Triggered While Away"
+  trigger:
+    - platform: state
+      entity_id: sensor.aeotec_zw100_multisensor_6_burglar_5_10_cleaned
+      state: "Motion"
+    - platform: state
+      entity_id: group.doors
+      state: "open"
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.house_alarm
+      state: "armed_away"
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.alarm_triggered
+
+- alias: "Alarm Triggered While Home"
+  trigger:
+    - platform: state
+      entity_id: group.doors
+      state: "open"
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.house_alarm
+      state: "armed_home"
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.alarm_triggered
+
+- alias: "Alarm Disarmed"
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.house_alarm
+    state: 'disarmed'
+  condition:
+    condition: state
+    entity_id: script.alarm_triggered
+    state: "on"
+  action:
+    - service: script.turn_off
+      entity_id: script.alarm_triggered
+    - service: scene.turn_on
+      entity_id: scene.reset_lights
