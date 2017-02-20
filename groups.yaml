@@ -218,6 +218,10 @@ Doors:
     - sensor.sensative_strips_sensor_2_0_cleaned
     - sensor.sensative_strips_sensor_3_0_cleaned
 
+Locks:
+  entities:
+    - lock.lockitron
+    
 
     
   ###  Shopping List   ###
@@ -319,6 +323,7 @@ Computer_Status:
     - group.fans
     - group.doors
     - group.motion_sensors
+    - group.locks
 Shopping:
   name: Shopping List
   icon: mdi:shopping

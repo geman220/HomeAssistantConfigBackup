@@ -14,7 +14,7 @@
   condition:
     condition: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    below: 1800
+    below: 3300
   action:
     service: scene.turn_on
     entity_id: scene.tv_playing
@@ -30,7 +30,7 @@
   condition:
     condition: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    below: 1800
+    below: 3300
   action:
     service: scene.turn_on
     entity_id: scene.tv_paused
@@ -50,7 +50,7 @@
   condition:
     condition: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    below: 1800
+    below: 3300
   action:
     service: scene.turn_on
     entity_id: scene.tv_paused

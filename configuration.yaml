@@ -39,6 +39,12 @@ mqtt:
   password: !secret mqttpassword
   keepalive: 60
 
+###  TEST Lockitron  ###
+lock:
+  platform: lockitron  
+  device: !secret lockitron_id
+  access_token: !secret lockitron_key
+
 ###  Z-Wave  ###
 zwave:
   usb_path: /dev/ttyACM0
@@ -88,10 +94,10 @@ climate:
   platform: nest
 
 ###  Harmony Remote  ###
-remote:
-  platform: harmony
-  name: Livingroom
-  host: 192.168.2.124
+#remote:
+#  platform: harmony
+#  name: Livingroom
+#  host: 192.168.2.124
 
 ### SmartThings Home Alarm ###
 alarm_control_panel:

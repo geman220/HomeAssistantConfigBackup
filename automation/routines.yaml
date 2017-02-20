@@ -104,7 +104,7 @@
           - sun
       - condition: numeric_state
         entity_id: sensor.cvillestation1_luminance
-        below: 1800
+        below: 3300
   action:
     service: scene.turn_on
     entity_id: scene.morning
@@ -151,7 +151,7 @@
   trigger:
     platform: state
     entity_id: sensor.aeotec_zw100_multisensor_6_burglar_5_10_cleaned
-    state: 'no motion'
+    state: 'No motion'
     for:
       hours: 1
       minutes: 30
@@ -181,7 +181,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    below: 1800
+    below: 3300
   action:
     service: scene.turn_on
     entity_id: scene.OutsideGarageOn
@@ -194,7 +194,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    below: 1800
+    below: 3300
   condition:
     condition: and
     conditions:
@@ -216,7 +216,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    below: 1800
+    below: 3300
   condition:
     condition: and
     conditions:
@@ -245,7 +245,7 @@
         state: 'off'
       - condition: numeric_state
         entity_id: sensor.cvillestation1_luminance
-        below: 1800
+        below: 3300
   action:
     service: scene.turn_on
     entity_id: scene.snack
@@ -268,7 +268,7 @@
         state: 'off'
       - condition: numeric_state
         entity_id: sensor.cvillestation1_luminance
-        below: 1800
+        below: 3300
   action:
     service: scene.turn_on
     entity_id: scene.downstairs_off    
@@ -286,7 +286,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    above: 2000
+    above: 2800
   action:
     service: scene.turn_on
     entity_id: scene.daylight
@@ -314,7 +314,7 @@
   condition:
     condition: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    below: 1800
+    below: 3300
   action:
     service: homeassistant.turn_on
     entity_id: script.timed_porch_light
