@@ -1,0 +1,131 @@
+####################################################################################################################################################################
+###                                                                        Upstairs Remote                                                                       ###
+####################################################################################################################################################################
+
+###  Master Bedroom Fan On [SHORT PRESS 1]  ###
+- alias: "Master Bedroom Fan On"
+  initial_state: True
+  hide_entity: True
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: aeotec_dsa03202_minimote_11
+        scene_id: 1
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+         - switch.ge_12722_onoff_relay_switch_switch_4_0
+ 
+###  Master Bedroom Fan Off [LONG PRESS 1]  ### 
+- alias: "Master Bedroom Fan Off"
+  initial_state: True
+  hide_entity: True
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: aeotec_dsa03202_minimote_11
+        scene_id: 2
+  action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+         - switch.ge_12722_onoff_relay_switch_switch_4_0
+         
+###  Master Bedroom Lights On [SHORT PRESS 2]  ### 
+- alias: "Master Bedroom Lights Dim"
+  initial_state: True
+  hide_entity: True
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: aeotec_dsa03202_minimote_11
+        scene_id: 3
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+         - scene.master_bedroom_dim       
+         
+###  Master Bedroom Lights Off [LONG PRESS 2]  ### 
+- alias: "Master Bedroom Lights Off"
+  initial_state: True
+  hide_entity: True
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: aeotec_dsa03202_minimote_11
+        scene_id: 4
+  action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+         - group.master_bedroom
+         
+####################################################################################################################################################################
+###                                                                        Downstairs Remote                                                                     ###
+####################################################################################################################################################################
+
+###  Cooking Automation Bypass [SHORT PRESS 1]  ###
+- alias: "Time To Cook, Automation Bypassed"
+  initial_state: True
+  hide_entity: True
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: aeotec_dsa03202_minimote_12
+        scene_id: 1
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+         - scene.cooking
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+         - automation.media_center_playing
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+         - automation.media_center_stoppedpaused
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+         - automation.media_center_idle
+         
+###  Cooking Done Automation Enable [LONG PRESS 1]  ###
+- alias: "Cooking Done, Automation Enabled"
+  initial_state: True
+  hide_entity: True
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: aeotec_dsa03202_minimote_12
+        scene_id: 2
+  action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+         - group.kitchen_pendants
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+         - group.kitchen_dls
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+         - automation.media_center_playing
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+         - automation.media_center_stoppedpaused
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+         - automation.media_center_idle

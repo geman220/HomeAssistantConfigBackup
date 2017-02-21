@@ -280,7 +280,7 @@
 ####################################################################################################################################################################
 
 ###  Sunrise  ###
-###  [AT SUNRISE >3300] ###
+###  [AT SUNRISE >2800] ###
 ###  [Lights] [Turn Off] All Lights  ###
 - alias: "Sunrise Lights Off"
   trigger:
@@ -292,8 +292,7 @@
     entity_id: scene.daylight
 
 ###  Garage Entrance Opened  ###
-###  [AT SUNRISE >3300] ###
-###  [Lights] [Turn Off] All Lights  ###
+###  [Lights] [Turn On] Inside Garage  ###
 - alias: "Garage Entrance opened"
   trigger:
     platform: state
@@ -304,8 +303,8 @@
     entity_id: script.timed_garage_light
     
 ###  Back Door Opened  ###
-###  [AT SUNRISE >3300] ###
-###  [Lights] [Turn Off] All Lights  ###
+###  [AT SUNSET <3300] ###
+###  [Lights] [Turn On] Porch Light  ###
 - alias: "Back Door Opened"
   trigger:
     platform: state
@@ -320,8 +319,7 @@
     entity_id: script.timed_porch_light
 
 ###  Garage Door Opened  ###
-###  [AT SUNRISE >3300] ###
-###  [Lights] [Turn Off] All Lights  ###
+###  [Lights] [Turn On] Inside Garage  ###
 - alias: "Garage Door Opened"
   trigger:
     platform: state

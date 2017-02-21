@@ -7,6 +7,7 @@ timed_garage_light:
     - service: light.turn_on
       data:
         entity_id: light.garage
+        brightness: 255
     - service: script.turn_on
       data:
         entity_id: script.garage_timer_off
@@ -29,6 +30,7 @@ timed_porch_light:
     - service: light.turn_on
       data:
         entity_id: light.porch
+        brightness: 255
     - service: script.turn_on
       data:
         entity_id: script.porch_timer_off
