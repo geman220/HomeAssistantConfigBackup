@@ -20,12 +20,5 @@
         service: switch.turn_off
         entity_id: switch.pc
 
-- platform: mqtt
-  name: "Motion Detector"
-  state_topic: "smartthings/Living Room Motion Sensor/motion"
-  command_topic: "smartthings/Living Room Motion Sensor/motion"
-  payload_on: "active"
-  payload_off: "inactive"
-  retain: true
-  
+
 - platform: thinkingcleaner

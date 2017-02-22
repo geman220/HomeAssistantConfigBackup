@@ -5,3 +5,4 @@ logs:
   homeassistant.components.media_player: warn
   homeassistant.components.switch: debug
   homeassistant.components.sensor: warn
+  homeassistant.components.device_tracker.mqtt: debug

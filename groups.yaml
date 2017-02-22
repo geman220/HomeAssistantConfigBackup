@@ -213,6 +213,10 @@ Doors:
     - sensor.garage_door_status_cleaned
     - sensor.sensative_strips_sensor_2_0_cleaned
     - sensor.sensative_strips_sensor_3_0_cleaned
+Inside_Doors:
+  entities:
+    - sensor.sensative_strips_sensor_2_0_cleaned
+    - sensor.sensative_strips_sensor_3_0_cleaned
 
 Locks:
   entities:

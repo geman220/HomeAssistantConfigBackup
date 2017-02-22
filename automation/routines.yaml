@@ -142,7 +142,7 @@
 ####################################################################################################################################################################
 
 ###  07:00PM Nightly Routine  ###
-###  [IF NO MOTION FOR 1 HOUR 30 MINUTES]  ###
+###  [IF NO MOTION FOR 1 HOUR]  ###
 ###  [IF HOME]  ###
 ###  [Alarm] [Turn On] Armed Home  ###
 ###  [Climate] [Turn On] Away  ###
@@ -154,8 +154,6 @@
     state: 'No motion'
     for:
       hours: 1
-      minutes: 30
-      seconds: 0
   condition:
     condition: and
     conditions:    

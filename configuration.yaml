@@ -34,7 +34,7 @@ zone 2:
 mqtt:
   broker: localhost
   port: 1883
-  client_id: HomeAssistant
+  client_id: HomeAssistant-master
   username: !secret mqttuser
   password: !secret mqttpassword
   keepalive: 60
