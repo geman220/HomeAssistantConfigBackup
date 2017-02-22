@@ -1,10 +1,4 @@
 - platform: owntracks
-
-- platform: mqtt
-  qos: 1
-  devices:
-    george_phone: !secret tracker_george
-    michelle_phone: !secret tracker_michelle
     
 - platform: tomato
   host: 192.168.2.1

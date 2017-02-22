@@ -138,3 +138,68 @@
       data:
         entity_id: climate.living_room
         away_mode: true
+
+###  [GEORGE] Close Garage When Leaving if Open  ###
+- alias: "Closing Garage for George"
+  trigger:
+    - platform: state
+      entity_id: device_tracker.homeassistant_george
+      from: 'home'
+      to: 'not_home'
+  condition:
+    condition: state
+    entity_id: cover.garage_door
+    state: 'open'
+  action:
+    service: cover.close_cover
+    data:
+      entity_id: cover.garage_door
+      
+###  [GEORGE] Open Garage When Arriving if Closed  ###
+- alias: "Opening Garage for George"
+  trigger:
+    - platform: state
+      entity_id: device_tracker.homeassistant_george
+      from: 'not_home'
+      to: 'home'
+  condition:
+    condition: state
+    entity_id: cover.garage_door
+    state: 'closed'
+  action:
+    service: cover.open_cover
+    data:
+      entity_id: cover.garage_door
+      
+ ###  [MICHELLE] Close Garage When Leaving if Open  ###
+- alias: "Closing Garage for Michelle"
+  trigger:
+    - platform: state
+      entity_id: device_tracker.homeassistant_michelle
+      from: 'home'
+      to: 'not_home'
+  condition:
+    condition: state
+    entity_id: cover.garage_door
+    state: 'open'
+  action:
+    service: cover.close_cover
+    data:
+      entity_id: cover.garage_door
+      
+###  [MICHELLE] Open Garage When Arriving if Closed  ###
+- alias: "Opening Garage for Michelle"
+  trigger:
+    - platform: state
+      entity_id: device_tracker.homeassistant_michelle
+      from: 'not_home'
+      to: 'home'
+  condition:
+    condition: state
+    entity_id: cover.garage_door
+    state: 'closed'
+  action:
+    service: cover.open_cover
+    data:
+      entity_id: cover.garage_door
+           

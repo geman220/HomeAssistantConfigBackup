@@ -8,10 +8,6 @@ Family:
   entities:
     - device_tracker.homeassistant_george
     - device_tracker.homeassistant_michelle
-Presence:
-  entities:
-    - device_tracker.george_phone
-    - device_tracker.michelle_phone
 Living_Room_Scenes:
   entities: 
     - scene.livingroom_normal 
