@@ -142,6 +142,9 @@ weblink: !include weblink.yaml
 ###  Input Boolean  ###
 input_boolean: !include input_boolean.yaml
 
+###  Configuration Panel  ###
+config:
+
 ####################################################
 #                                                  #
 #                     Enables                      #
@@ -160,6 +163,17 @@ logbook:
 
 ###  History  ###
 history:
+
+###  Recorder  ###
+recorder:
+  purge_days: 30
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - updater
+    entities:
+      - sun.sun
 
 ###  Frontend  ###
 frontend:

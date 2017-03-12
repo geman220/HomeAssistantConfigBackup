@@ -15,6 +15,29 @@
   
 - platform: thinkingcleaner
 
+- platform: mqtt_room
+  device_id: 74278bdab64445208f0c720eaf059935_0000_0000
+  name: "George's Keys"
+  state_topic: 'happy-bubbles/presence/ha'
+  away_timeout: 60
+  
+- platform: mqtt_room
+  device_id: e2c56db5dffb48d2b060d0f5a71096e0_0000_0000
+  name: "Michelle's Keys"
+  state_topic: 'happy-bubbles/presence/ha'
+  away_timeout: 60
+
+- platform: mqtt_room
+  device_id: 2f234454cf6d4a0fadf2f4911ba9ffa6_0001_0001
+  name: "George's Car"
+  state_topic: 'happy-bubbles/presence/ha'
+  away_timeout: 60
+
+- platform: mqtt_room
+  device_id: a036cacb0aa0405aa2f93a006dcae498_0001_0001
+  name: "Michelle's Car"
+  state_topic: 'happy-bubbles/presence/ha'
+  away_timeout: 60
 
 - platform: template
   sensors:

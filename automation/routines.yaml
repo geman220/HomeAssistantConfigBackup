@@ -22,7 +22,7 @@
           - tue
           - wed
           - thu
-          - fri     
+          - fri
   action:
     - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.house_alarm
@@ -284,7 +284,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    above: 2800
+    above: 3000
   action:
     service: scene.turn_on
     entity_id: scene.daylight

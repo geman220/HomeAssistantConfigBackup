@@ -1,12 +1,5 @@
 - platform: owntracks
-  max_gps_accuracy: 100
-    
-#- platform: tomato
-#  host: 192.168.2.1
-#  username: !secret router_admin
-#  password: !secret router_password
-#  http_id: !secret router_httpid
-  
+
 - platform: nmap_tracker
   hosts: 192.168.2.1/24
   home_interval: 10
@@ -23,3 +16,5 @@
     - 192.168.2.216
     - 192.168.2.232
     - 192.168.2.253
+
+- platform: bluetooth_tracker

@@ -97,9 +97,9 @@
 - alias: "Opening Garage for Michelle"
   trigger:
     - platform: state
-      entity_id: device_tracker.homeassistant_michelle
-      from: 'not_home'
-      to: 'home'
+      entity_id: sensor.michelles_car
+      from: 'away'
+      to: 'Garage Bubble'
   condition:
     condition: state
     entity_id: cover.garage_door
@@ -113,9 +113,9 @@
 - alias: "Opening Garage for George"
   trigger:
     - platform: state
-      entity_id: device_tracker.homeassistant_george
-      from: 'not_home'
-      to: 'home'
+      entity_id: sensor.georges_car
+      from: 'away'
+      to: 'Garage Bubble'
   condition:
     condition: state
     entity_id: cover.garage_door
@@ -176,9 +176,9 @@
 - alias: "Closing Garage for George"
   trigger:
     - platform: state
-      entity_id: device_tracker.homeassistant_george
-      from: 'home'
-      to: 'not_home'
+      entity_id: sensor.georges_keys
+      from: 'Garage Bubble'
+      to: 'away'
   condition:
     condition: state
     entity_id: cover.garage_door
@@ -192,9 +192,9 @@
 - alias: "Closing Garage for Michelle"
   trigger:
     - platform: state
-      entity_id: device_tracker.homeassistant_michelle
-      from: 'home'
-      to: 'not_home'
+      entity_id: sensor.michelles_keys
+      from: 'Garage Bubble'
+      to: 'away'
   condition:
     condition: state
     entity_id: cover.garage_door
