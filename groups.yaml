@@ -185,7 +185,6 @@ Speedtest:
 Links:
   entities:
     - weblink.HTPC_Manager
-    - weblink.dashboard
 Roomba:
   entities:
     - sensor.downstairsroomba_state  
@@ -314,9 +313,9 @@ Computer_Status:
   view: yes
   entities:
     - group.Computers
-    - group.all_lights_2
     - group.speedtest
     - group.links
+    - group.all_lights
     - group.roomba
     - group.automation
     - media_player.music
