@@ -204,6 +204,7 @@ Alarm_Bypass:
 Climate:
   entities:
     - climate.living_room
+    - climate.upstairs
 Garage_Door:
   entities:
     - cover.garage_door

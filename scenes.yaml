@@ -127,8 +127,6 @@
       state: on
       transition: 2
       brightness: 255
- #     xy_color: [0.445, 0.4067]
- #     color_temp: 346
     group.kitchen_dls:
       state: off
       transition: 2
@@ -136,8 +134,6 @@
       state: on
       transition: 2
       brightness: 255
-#      xy_color: [0.6142, 0.3157]
-#      color_temp: 410
             
 - name: Kitchen dim
   entities:
@@ -452,7 +448,7 @@
       color_temp: 346
     
 - name: Morning Bedroom
-  entites:    
+  entities:    
     group.master_bedroom:
       state: on
       transition: 3600 

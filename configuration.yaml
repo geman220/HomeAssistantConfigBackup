@@ -39,12 +39,12 @@ mqtt:
   password: !secret mqttpassword
   keepalive: 60
 
-###  TEST Lockitron  ###
+###  Lockitron  ###
 lock:
   platform: lockitron  
-  device: !secret lockitron_id
   access_token: !secret lockitron_key
-
+  id: !secret lockitron_id
+  
 ###  Z-Wave  ###
 zwave:
   usb_path: /dev/ttyACM0

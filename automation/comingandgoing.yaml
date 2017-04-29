@@ -171,7 +171,11 @@
       data:
         entity_id: climate.living_room
         away_mode: true
-
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.upstairs
+        away_mode: true
+        
 ###  [GEORGE] Close Garage When Leaving if Open  ###
 - alias: "Closing Garage for George"
   trigger:
