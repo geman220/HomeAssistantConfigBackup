@@ -163,3 +163,5 @@ cover.garage_door:
   icon: mdi:garage
 sensor.garage_door_status_cleaned:
   icon: mdi:garage
+switch.office_tv:
+  icon: mdi:television

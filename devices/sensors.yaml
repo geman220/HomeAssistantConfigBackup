@@ -38,6 +38,12 @@
   name: "Michelle's Car"
   state_topic: 'happy-bubbles/presence/ha'
   away_timeout: 60
+  
+- platform: command_line
+  name: SSL cert expiry
+  unit_of_measurement: days
+  scan_interval: 10800
+  command: "ssl-cert-check -b -c /etc/letsencrypt/live/cvillehome.duckdns.org/cert.pem | awk '{ print $NF }'"
 
 - platform: template
   sensors:

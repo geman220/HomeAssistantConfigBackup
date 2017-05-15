@@ -6,8 +6,8 @@ Bedroom:
     - media_player.bedroom_player
 Family: 
   entities:
-    - device_tracker.homeassistant_george
-    - device_tracker.homeassistant_michelle
+    - device_tracker.george_george
+    - device_tracker.michelle_michelle
 Living_Room_Scenes:
   entities: 
     - scene.livingroom_normal 
@@ -221,7 +221,10 @@ Inside_Doors:
 Locks:
   entities:
     - lock.lockitron
-    
+
+tvs:
+  entities:
+    - switch.office_tv  
 
     
   ###  Shopping List   ###
@@ -308,6 +311,7 @@ Upstairs:
     - group.Master_Bedroom_Scenes
     - group.loft
     - group.fans
+    - group.tvs
 Computer_Status:
   name: Status
   icon: mdi:desktop-tower

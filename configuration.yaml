@@ -119,7 +119,7 @@ sensor: !include devices/sensors.yaml
 light: !include devices/light.yaml
 
 ###  Logger  ###
-logger: !include logger.yaml
+#logger: !include logger.yaml
 
 ###  Groups  ###
 group: !include groups.yaml
@@ -160,6 +160,10 @@ logbook:
     entities:
       - sensor.garage_door_time_in_state
       - sensor.garage_door_wifi_signal_strength
+
+###  SSL Renew  ###
+shell_command: 
+  renew_ssl: ~/certbot/certbot-auto renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01
 
 ###  History  ###
 history:
