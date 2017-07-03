@@ -27,9 +27,9 @@
   switches:
     office_tv:
       friendly_name: Office TV
-      command_on: "/usr/bin/curl -k -H \"Content-Type: application/json\" -H \"AUTH: lcypdq2kfa\" -X PUT -d '{\"KEYLIST\": [{\"CODESET\": 11,\"CODE\": 1,\"ACTION\":\"KEYPRESS\"}]}' https://192.168.2.13:9000/key_command/"
-      command_off: "/usr/bin/curl -k -H \"Content-Type: application/json\" -H \"AUTH: lcypdq2kfa\" -X PUT -d '{\"KEYLIST\": [{\"CODESET\": 11,\"CODE\": 0,\"ACTION\":\"KEYPRESS\"}]}' https://192.168.2.13:9000/key_command/"
-      command_state: "/usr/bin/curl -k -H \"Content-Type: application/json\" -H \"AUTH: lcypdq2kfa\" -X GET https://192.168.2.13:9000/state/device/power_mode"
+      command_on: "/usr/bin/curl -k -H \"Content-Type: application/json\" -H \"AUTH: lcypdq2kfa\" -X PUT -d '{\"KEYLIST\": [{\"CODESET\": 11,\"CODE\": 1,\"ACTION\":\"KEYPRESS\"}]}' https://192.168.2.7:9000/key_command/"
+      command_off: "/usr/bin/curl -k -H \"Content-Type: application/json\" -H \"AUTH: lcypdq2kfa\" -X PUT -d '{\"KEYLIST\": [{\"CODESET\": 11,\"CODE\": 0,\"ACTION\":\"KEYPRESS\"}]}' https://192.168.2.7:9000/key_command/"
+      command_state: "/usr/bin/curl -k -H \"Content-Type: application/json\" -H \"AUTH: lcypdq2kfa\" -X GET https://192.168.2.7:9000/state/device/power_mode"
       value_template: >
         {% if value_json.ITEMS.0.VALUE == 1 %}
           true

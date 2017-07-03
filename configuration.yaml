@@ -104,6 +104,13 @@ alarm_control_panel:
   - platform: manual
     name: house_alarm
 
+    
+###  Octoprint   ###
+octoprint:
+  host: 192.168.2.185
+  api_key: 25AC7E14973E483D821E9E84069496E4
+  
+
 ####################################################
 #                                                  #
 #                     Includes                     #

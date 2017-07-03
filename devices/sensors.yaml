@@ -45,6 +45,14 @@
   scan_interval: 10800
   command: "ssl-cert-check -b -c /etc/letsencrypt/live/cvillehome.duckdns.org/cert.pem | awk '{ print $NF }'"
 
+- platform: octoprint
+  name: Anet A8
+  monitored_conditions:
+    - Current State
+    - Temperatures
+    - Job Percentage
+      
+
 - platform: template
   sensors:
     garage_door_status:

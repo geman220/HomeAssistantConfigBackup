@@ -199,8 +199,10 @@ Alarm_Bypass:
   entities:
     - automation.alarm_disarmed
     - automation.no_one_downstairs_alarm_armed_home
-    - automation.alarm_armed_away
-    - automation.alarm_morning_alarm_disabled
+    - automation.weekday_morning_alarm_disabled
+    - automation.weekend_morning_alarm_disabled
+    - automation.alarm_armed_away_turn_lights_off_away_climate
+    - automation.garage_door_opened_alarm_disarmed
 Climate:
   entities:
     - climate.living_room
@@ -226,6 +228,14 @@ tvs:
   entities:
     - switch.office_tv  
 
+3dprinter:
+  entities:
+    - sensor.anet_a8_actual_bed_temp
+    - sensor.anet_a8_actual_tool0_temp
+    - sensor.anet_a8_current_state
+    - sensor.anet_a8_job_percentage
+    - sensor.anet_a8_target_bed_temp
+    - sensor.anet_a8_target_tool0_temp
     
   ###  Shopping List   ###
 Drinks:
@@ -328,6 +338,7 @@ Computer_Status:
     - group.doors
     - group.motion_sensors
     - group.locks
+    - group.3dprinter
 Shopping:
   name: Shopping List
   icon: mdi:shopping

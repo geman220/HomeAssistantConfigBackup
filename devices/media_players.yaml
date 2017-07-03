@@ -13,9 +13,6 @@
   name: Bedroom Player
   username: !secret bed_kodi_username
   password: !secret bed_kodi_password
-  
-###  Kitchen Sonos Play5  ###
-- platform: sonos
 
 ###  Google Play Media Desktop  ###  
 - platform: gpmdp

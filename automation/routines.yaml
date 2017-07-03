@@ -9,7 +9,7 @@
 - alias: "Weekday Morning Alarm Disabled"
   trigger:
     platform: time
-    after: '04:30'
+    at: '04:30'
   condition:
     condition: and
     conditions:
@@ -37,7 +37,7 @@
 - alias: "Weekday Sunrise"
   trigger:
     platform: time
-    after: '05:15'
+    at: '05:15'
   condition:
     condition: and
     conditions:
@@ -61,7 +61,7 @@
 - alias: "Weekday Sunrise Bedroom"
   trigger:
     platform: time
-    after: '06:15'
+    at: '06:15'
   condition:
     condition: and
     conditions:
@@ -91,7 +91,7 @@
 - alias: "Weekend Sunrise"
   trigger:
     platform: time
-    after: '09:00'
+    at: '09:00'
   condition:
     condition: and
     conditions:
@@ -116,7 +116,7 @@
 - alias: "Weekend Morning Alarm Disabled"
   trigger:
     platform: time
-    after: '07:30'
+    at: '07:30'
   condition:
     condition: and
     conditions:
@@ -151,7 +151,7 @@
   trigger:
     platform: state
     entity_id: sensor.aeotec_zw100_multisensor_6_burglar_5_10_cleaned
-    state: 'No motion'
+    to: 'No motion'
     for:
       hours: 1
   condition:
@@ -295,7 +295,7 @@
   trigger:
     platform: state
     entity_id: sensor.sensative_strips_sensor_2_0_cleaned
-    state: open
+    to: open
   action:
     service: homeassistant.turn_on
     entity_id: script.timed_garage_light
@@ -307,7 +307,7 @@
   trigger:
     platform: state
     entity_id: sensor.sensative_strips_sensor_3_0_cleaned
-    state: open
+    to: open
   condition:
     condition: numeric_state
     entity_id: sensor.cvillestation1_luminance
@@ -322,7 +322,7 @@
   trigger:
     platform: state
     entity_id: sensor.garage_door_status_cleaned
-    state: open
+    to: open
   action:
     service: homeassistant.turn_on
     entity_id: script.timed_garage_light

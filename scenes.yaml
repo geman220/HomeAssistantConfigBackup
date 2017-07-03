@@ -13,19 +13,16 @@
       state: on
       transition: 2
       brightness: 255
-      #xy_color: [ 0.4448, 0.4066 ]  
     group.cabinet_lights:
       state: on
       transition: 2
       brightness: 60
-      xy_color: [0.6142, 0.3157]
-      color_temp: 410
+      rgb_color: [114,255,224]
     group.foyer:
       state: on
       transition: 2
       brightness: 60
-      xy_color: [0.1653, 0.115]
-      color_temp: 154            
+      xy_color: [0.1653, 0.115]       
             
 - name: TV Paused
   entities:
@@ -33,12 +30,10 @@
       state: on
       transition: 2
       brightness: 10
-      #xy_color: [ 0.4448, 0.4066 ]
     group.kitchen_pendants:
       state: on
       transition: 2
       brightness: 30
-      #xy_color: [ 0.4448, 0.4066 ]
     group.kitchen_dls:
       state: off
       transition: 2
@@ -47,19 +42,16 @@
       transition: 2
       brightness: 255
       xy_color: [0.2988, 0.4192]
-      color_temp: 154
     group.cabinet_lights:
       state: on
       transition: 2
       brightness: 255
-      xy_color: [0.6142, 0.3157]
-      color_temp: 410 
+      rgb_color: [114,255,224]
     group.foyer:
       state: on
       transition: 2
       brightness: 255
-      xy_color: [0.1653, 0.115]
-      color_temp: 154            
+      xy_color: [0.1653, 0.115]      
 
 - name: Livingroom normal
   entities:
@@ -67,14 +59,11 @@
       state: on
       transition: 2
       brightness: 255
- #     xy_color: [0.445, 0.4067]
- #     color_temp: 346
     group.entertainment_center:
       state: on
       transition: 2
       brightness: 255
       xy_color: [0.2988, 0.4192]
-      color_temp: 154
       
 - name: Livingroom dim
   entities:
@@ -82,14 +71,11 @@
       state: on
       transition: 2
       brightness: 30
-#      xy_color: [0.445, 0.4067]
-#      color_temp: 346
     group.entertainment_center:
       state: on
       transition: 2
       brightness: 100
       xy_color: [0.2988, 0.4192]
-      color_temp: 154
 
 - name: Livingroom Off
   entities:
@@ -106,20 +92,15 @@
       state: on
       transition: 2
       brightness: 30
-#      xy_color: [0.445, 0.4067]
-#      color_temp: 346
     group.kitchen_dls:
       state: on
       transition: 2
-      brightness: 60
-#      xy_color: [0.445, 0.4067]
-#      color_temp: 346
+      brightness: 90
     group.cabinet_lights:
       state: on
       transition: 2
-      brightness: 60
-      xy_color: [0.6142, 0.3157]
-      color_temp: 410
+      brightness: 175
+      rgb_color: [114,255,224]
 
 - name: Kitchen normal
   entities:
@@ -134,6 +115,7 @@
       state: on
       transition: 2
       brightness: 255
+      rgb_color: [114,255,224]
             
 - name: Kitchen dim
   entities:
@@ -141,17 +123,14 @@
       state: on
       transition: 2
       brightness: 30
-#      xy_color: [0.445, 0.4067]
-#      color_temp: 346
     group.kitchen_dls:
       state: off
       transition: 2
     group.cabinet_lights:
       state: on
       transition: 2
-      brightness: 30
-#      xy_color: [0.6142, 0.3157]
-#      color_temp: 410
+      brightness: 130
+      rgb_color: [114,255,224]
 
 - name: Kitchen Off
   entities:
@@ -171,12 +150,10 @@
       state: on
       transition: 2
       brightness: 255
-#      xy_color: [0.445, 0.4067]
     group.kitchen_pendants:
       state: on
       transition: 2
       brightness: 255
-#      xy_color: [0.445, 0.4067]
     group.kitchen_dls:
       state: off
       transition: 2
@@ -185,19 +162,17 @@
       transition: 2
       brightness: 255
       xy_color: [ 0.2988, 0.4192 ]
-      color_temp: 154
     group.cabinet_lights:
       state: on
       transition: 2
       brightness: 255
-      xy_color: [ 0.6142, 0.3157 ]
-      color_temp: 410 
+      rgb_color: [114,255,224]
     group.foyer:
       state: on
       transition: 2
       brightness: 255
       xy_color: [ 0.1653, 0.115 ]
-      color_temp: 154            
+      #color_temp: 154            
 
 - name: Downstairs dim
   entities:
@@ -205,14 +180,10 @@
       state: on
       transition: 3600 
       brightness: 30
-#      xy_color: [0.445, 0.4067]
-#      color_temp: 346
     group.kitchen_pendants:
       state: on
       transition: 5
       brightness: 30
-#      xy_color: [0.445, 0.4067]
-#      color_temp: 346
     group.kitchen_dls:
       state: off
       transition: 5
@@ -221,19 +192,16 @@
       transition: 2
       brightness: 30
       xy_color: [0.2988, 0.4192]
-      color_temp: 154
     group.cabinet_lights:
       state: on
       transition: 2
-      brightness: 100
-      xy_color: [0.6142, 0.3157]
-      color_temp: 410 
+      brightness: 130
+      rgb_color: [114,255,224]
     group.foyer:
       state: on
       transition: 2
       brightness: 30
-      xy_color: [0.1653, 0.115]
-      color_temp: 154            
+      xy_color: [0.1653, 0.115]        
 
 - name: Downstairs Off
   entities:
@@ -247,8 +215,6 @@
       state: on
       transition: 10 
       brightness: 255
- #     xy_color: [0.445, 0.4067]
- #     color_temp: 346
 
       
 - name: Master Bedroom dim
@@ -257,8 +223,6 @@
       state: on
       transition: 10 
       brightness: 30
- #     xy_color: [ 0.445, 0.4067 ]
- #     color_temp: 346
 
 
 - name: Master Bedroom Off
@@ -285,8 +249,6 @@
       state: on
       transition: 3600
       brightness: 255
- #     xy_color: [0.445, 0.4067]
- #     color_temp: 346
     group.kitchen_dls:
       state: off
       transition: 3600
@@ -295,31 +257,24 @@
       transition: 3600  
       brightness: 255
       xy_color: [0.2988, 0.4192]
-      color_temp: 154
     group.cabinet_lights:
       state: on
       transition: 3600 
       brightness: 255
-      xy_color: [0.6142, 0.3157]
-      color_temp: 410
+      rgb_color: [114,255,224]
     group.foyer:
       state: on
       transition: 3600 
       brightness: 255
       xy_color: [0.1653, 0.115]
-      color_temp: 154
     group.livingroom_dls:
       state: on
       transition: 3600 
       brightness: 255
-#      xy_color: [0.445, 0.4067]
-#      color_temp: 346
     group.loft:
       state: on
       transition: 3600 
       brightness: 255
- #     xy_color: [0.445, 0.4067]
- #     color_temp: 346
 
 - name: Reset Lights
   entities:
@@ -328,43 +283,36 @@
       transition: 5
       brightness: 255
       xy_color: [0.445, 0.4067]
-      color_temp: 346
     group.kitchen_dls:
       state: on
       transition: 5
       brightness: 255
       xy_color: [0.445, 0.4067]
-      color_temp: 346
     group.entertainment_center:
       state: on
       transition: 5 
       brightness: 255
       xy_color: [0.2988, 0.4192]
-      color_temp: 154
     group.cabinet_lights:
       state: on
       transition: 5
       brightness: 255
-      xy_color: [0.6142, 0.3157]
-      color_temp: 410
+      rgb_color: [114,255,224]
     group.foyer:
       state: on
       transition: 5
       brightness: 255
       xy_color: [0.1653, 0.115]
-      color_temp: 154
     group.livingroom_dls:
       state: on
       transition: 5
       brightness: 255
       xy_color: [0.445, 0.4067]
-      color_temp: 346
     group.loft:
       state: on
       transition: 5
       brightness: 255
       xy_color: [0.445, 0.4067]
-      color_temp: 346
 
 - name: OutsideGarageOn
   entities:
@@ -387,19 +335,16 @@
       transition: 60  
       brightness: 255
       xy_color: [0.2988, 0.4192]
-      color_temp: 154
     group.cabinet_lights:
       state: on
       transition: 60 
       brightness: 255
-      xy_color: [0.6142, 0.3157]
-      color_temp: 410
+      rgb_color: [114,255,224]
     group.foyer:
       state: on
       transition: 60 
       brightness: 125
       xy_color: [0.1653, 0.115]
-      color_temp: 154
     group.livingroom_dls:
       state: on
       transition: 60 
@@ -411,8 +356,6 @@
       state: on
       transition: 1800
       brightness: 175
-#      xy_color: [0.445, 0.4067]
-#      color_temp: 346
     group.kitchen_dls:
       state: off
       transition: 1800
@@ -420,32 +363,25 @@
       state: on
       transition: 1800
       brightness: 175
-#      xy_color: [0.445, 0.4067]
-#      color_temp: 346
     group.cabinet_lights:
       state: on
       transition: 1800
       brightness: 175
-      xy_color: [0.6142, 0.3157]
-      color_temp: 410
+      rgb_color: [114,255,224]
     group.foyer:
       state: on
       transition: 1800
       brightness: 175
       xy_color: [0.1653, 0.115]
-      color_temp: 154
     group.stairs:
       state: on
       transition: 1800
       brightness: 175
-#      xy_color: [0.445, 0.4067]
-#      color_temp: 346
     group.loft:
       state: on
       transition: 3600 
       brightness: 100
       xy_color: [0.445, 0.4067]
-      color_temp: 346
     
 - name: Morning Bedroom
   entities:    
@@ -453,8 +389,6 @@
       state: on
       transition: 3600 
       brightness: 150
-#      xy_color: [0.445, 0.4067]
-#      color_temp: 346
 
 - name: Daylight
   entities:
@@ -476,14 +410,12 @@
     group.kitchen_pendants:
       state: on
       transition: 2
-      brightness: 30
-      #xy_color: [ 0.4448, 0.4066 ]            
+      brightness: 30          
     group.cabinet_lights:
       state: on
       transition: 2
-      brightness: 30
-      xy_color: [0.6142, 0.3157]
-      color_temp: 410
+      brightness: 100
+      rgb_color: [114,255,224]
 
 - name: Stairs On
   entities:
@@ -491,8 +423,6 @@
       state: on
       transition: 2
       brightness: 255
-#      xy_color: [0.445, 0.4067]
-#      color_temp: 346
       
 - name: Stairs Off
   entities:

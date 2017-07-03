@@ -2,14 +2,14 @@
   trigger:
     - platform: state
       entity_id: sensor.aeotec_zw100_multisensor_6_burglar_5_10_cleaned
-      state: "Motion"
+      to: "Motion"
     - platform: state
       entity_id: group.Inside_Doors
-      state: "open"
+      to: "open"
   condition:
     - condition: state
       entity_id: alarm_control_panel.house_alarm
-      state: "armed_away"
+      state: 'armed_away'
   action:
     service: homeassistant.turn_on
     entity_id: script.alarm_triggered
@@ -18,11 +18,11 @@
   trigger:
     - platform: state
       entity_id: group.Inside_Doors
-      state: "open"
+      to: "open"
   condition:
     - condition: state
       entity_id: alarm_control_panel.house_alarm
-      state: "armed_home"
+      state: 'armed_home'
   action:
     service: homeassistant.turn_on
     entity_id: script.alarm_triggered
@@ -31,11 +31,11 @@
   trigger:
     platform: state
     entity_id: alarm_control_panel.house_alarm
-    state: 'disarmed'
+    to: 'disarmed'
   condition:
     condition: state
     entity_id: script.alarm_triggered
-    state: "on"
+    state: 'on'
   action:
     - service: script.turn_off
       entity_id: script.alarm_triggered
