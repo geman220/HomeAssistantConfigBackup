@@ -45,6 +45,8 @@ scene.master_bedroom_dim:
   icon: mdi:lightbulb
 group.garage_door:
   friendly_name: Garage Door
+group.Motion_Sensors:
+  friendly_name: Motion Sensors
 scene.master_bedroom_off:
   friendly_name: Master Bedroom Off
   icon: mdi:lightbulb-outline     
@@ -143,16 +145,18 @@ switch.downstairsroomba_clean:
 switch.downstairsroomba_dock:
   icon: mdi:home
   friendly_name: Downstairs Roomba Dock
+media_player.vizio_smartcast:
+  friendly_name: Office TV
 switch.downstairsroomba_find:
   icon: mdi:map-marker
   friendly_name: Downstairs Roomba Find
 input_boolean.Buy:
   friendly_name: Buy?
-switch.ge_12722_onoff_relay_switch_switch_4_0:
-  friendly_name: Master Bedroom Fan
-  icon: mdi:fan
-switch.ge_12722_onoff_relay_switch_switch_6_0:
+switch.ge_12722_onoff_relay_switch_switch:
   friendly_name: Office Fan
+  icon: mdi:fan
+switch.bedroom_fan_switch:
+  friendly_name: Master Bedroom Fan
   icon: mdi:fan
 sensor.sensative_strips_sensor_2_0_cleaned:
   icon: mdi:login

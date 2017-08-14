@@ -2,7 +2,30 @@
   scan_interval: 120
   name: Weather
 
-
+- platform: darksky
+  api_key: !secret darkskyapi
+  update_interval: 300
+  monitored_conditions:
+    - summary
+    - icon
+    - nearest_storm_distance
+    - precip_type
+    - precip_intensity
+    - precip_probability
+    - temperature
+    - apparent_temperature
+    - dew_point
+    - wind_speed
+    - wind_bearing
+    - cloud_cover
+    - humidity
+    - pressure
+    - visibility
+    - ozone
+    - minutely_summary
+    - hourly_summary
+    - daily_summary
+    
 - platform: speedtest
   hour:
     - 6
@@ -67,13 +90,16 @@
       unit_of_measurement: 'dB'
     sensative_strips_sensor_2_0_cleaned:
       friendly_name: 'Garage Entrance'
-      value_template: "{{ 'closed' if is_state('binary_sensor.sensative_strips_sensor_2_0', 'off') else 'open' }}"
+      value_template: "{{ 'closed' if is_state('binary_sensor.sensative_strips_sensor', 'off') else 'open' }}"
     sensative_strips_sensor_3_0_cleaned:
       friendly_name: 'Back Door'
-      value_template: "{{ 'closed' if is_state('binary_sensor.sensative_strips_sensor_3_0', 'off') else 'open' }}"
+      value_template: "{{ 'closed' if is_state('binary_sensor.sensative_strips_sensor_2', 'off') else 'open' }}"
     garage_door_status_cleaned:
       friendly_name: 'Garage Door'
       value_template: '{{ states.cover.garage_door.state }}'
     aeotec_zw100_multisensor_6_burglar_5_10_cleaned:
       friendly_name: 'Living Room Motion Detector'
-      value_template: "{{ 'Motion' if is_state('sensor.aeotec_zw100_multisensor_6_burglar_5_10', '8') else 'No motion' }}"
+      value_template: "{{ 'Motion' if is_state('sensor.aeotec_zw100_multisensor_6_burglar', '8') else 'No motion' }}"
+    aeotec_zw100_multisensor_6_burglar_5_10_cleaned_2:
+      friendly_name: 'Office Motion Sensor'
+      value_template: "{{ 'Motion' if is_state('sensor.aeotec_zw100_multisensor_6_burglar_2', '8') else 'No motion' }}"

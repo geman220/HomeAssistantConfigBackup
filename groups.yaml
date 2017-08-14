@@ -1,9 +1,9 @@
 Kitchen: 
   entities:
     - media_player.kitchen
-Bedroom:
+Office:
   entities:
-    - media_player.bedroom_player
+    - media_player.office_player
 Family: 
   entities:
     - device_tracker.george_george
@@ -34,11 +34,12 @@ Master_Bedroom_Scenes:
     - scene.master_bedroom_off
 Fans:
   entities:
-    - switch.ge_12722_onoff_relay_switch_switch_4_0
-    - switch.ge_12722_onoff_relay_switch_switch_6_0
+    - switch.ge_12722_onoff_relay_switch_switch
+    - switch.bedroom_fan_switch
 Motion_Sensors:
   entities:
     - sensor.aeotec_zw100_multisensor_6_burglar_5_10_cleaned
+    - sensor.aeotec_zw100_multisensor_6_burglar_5_10_cleaned_2
 Weather: 
   entities:
     - sensor.weather_station_temperature
@@ -226,8 +227,8 @@ Locks:
 
 tvs:
   entities:
-    - switch.office_tv  
-
+    - media_player.vizio_smartcast
+    
 3dprinter:
   entities:
     - sensor.anet_a8_actual_bed_temp
@@ -316,7 +317,7 @@ Upstairs:
   icon: mdi:numeric-2-box-multiple-outline
   view: yes
   entities:
-    - media_player.bedroom_player
+    - media_player.office_player
     - group.stairs_scenes
     - group.Master_Bedroom_Scenes
     - group.loft

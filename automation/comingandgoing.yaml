@@ -207,4 +207,17 @@
     service: cover.close_cover
     data:
       entity_id: cover.garage_door
-           
+ 
+###  Turn Office Stuff Off If No Motion  ###
+- alias: "Nobody in the Office"
+  trigger:
+    platform: state
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_5_10_cleaned_2
+    to: 'No Motion'
+    for:
+      hours: 1
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.ge_12722_onoff_relay_switch_switch
+    - service: homeassistant.turn_off
+      entity_id: switch.office_tv

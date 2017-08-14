@@ -1,6 +1,6 @@
 ###  Livingroom Kodi Player  ###
 - platform: kodi
-  host: 192.168.2.253
+  host: 192.168.2.127
   port: 8080
   name: Livingroom Player
   username: !secret living_kodi_username
@@ -9,10 +9,10 @@
 ###  Master Bedroom Kodi Player  ###
 - platform: kodi
   host: 192.168.2.189
-  port: 9393
-  name: Bedroom Player
-  username: !secret bed_kodi_username
-  password: !secret bed_kodi_password
+  port: 8383
+  name: Office Player
+  username: !secret office_kodi_username
+  password: !secret office_kodi_password
 
 ###  Google Play Media Desktop  ###  
 - platform: gpmdp
@@ -20,3 +20,8 @@
   name: Music
 
 - platform: cast
+
+###  Office TV  ###
+- platform: vizio
+  host: 192.168.2.7
+  access_token: lcypdq2kfa
