@@ -192,6 +192,7 @@ Roomba:
     - switch.downstairsroomba_clean
     - switch.downstairsroomba_dock
     - switch.downstairsroomba_find
+    - vacuum.upstairs_roomba
 Automation:
   entities:
     - automation.media_center_playing

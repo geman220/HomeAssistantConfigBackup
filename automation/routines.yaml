@@ -341,7 +341,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.aeotec_zw100_multisensor_6_temperature_2
-    above: 86
+    above: 82
   condition:
     condition: state
     entity_id: device_tracker.george_george
@@ -355,7 +355,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.aeotec_zw100_multisensor_6_temperature_2
-    below: 85
+    below: 80
   condition:
     condition: state
     entity_id: device_tracker.george_george

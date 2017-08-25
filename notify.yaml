@@ -1,2 +1,20 @@
-- platform: pushbullet
-  api_key: !secret pushbullet_api
+###  Pushover Platform  ###
+- platform: pushover
+  api_key: !secret pushover_api
+  user_key: !secret pushover_key
+
+###  Kodi Office Platform  ###
+- platform: kodi
+  name: House_Notification_Office
+  host: 192.168.2.189
+  port: 8383
+  username: !secret office_kodi_username
+  password: !secret office_kodi_password
+  
+###  Kodi Livingroom Platform  ###
+- platform: kodi
+  name: House_Notification_LR
+  host: 192.168.2.127
+  port: 8080
+  username: !secret living_kodi_username
+  password: !secret living_kodi_password

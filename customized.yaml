@@ -21,7 +21,10 @@ scene.kitchen_dim:
   icon: mdi:lightbulb
 scene.kitchen_off:
   friendly_name: Kitchen Off
-  icon: mdi:lightbulb-outline  
+  icon: mdi:lightbulb-outline
+group.all_vacuum_cleaners:
+  friendly_name: Vacuum Cleaners
+  icon: mdi:robot  
 scene.downstairs_normal:
   friendly_name: Downstairs On
   icon: mdi:lightbulb
