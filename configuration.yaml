@@ -183,15 +183,15 @@ shell_command:
 history:
 
 ###  Recorder  ###
-recorder:
-  purge_days: 30
-  exclude:
-    domains:
-      - automation
-      - weblink
-      - updater
-    entities:
-      - sun.sun
+#recorder:
+#  purge_interval: 30
+#  exclude:
+#    domains:
+#      - automation
+#      - weblink
+#      - updater
+#    entities:
+#      - sun.sun
 
 ###  Frontend  ###
 frontend:

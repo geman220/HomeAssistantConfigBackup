@@ -61,7 +61,7 @@
 - alias: "Weekday Sunrise Bedroom"
   trigger:
     platform: time
-    at: '06:15'
+    at: '06:30'
   condition:
     condition: and
     conditions:
@@ -104,7 +104,7 @@
           - sun
       - condition: numeric_state
         entity_id: sensor.cvillestation1_luminance
-        below: 3300
+        below: 2900
   action:
     service: scene.turn_on
     entity_id: scene.morning
@@ -179,7 +179,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    below: 3300
+    below: 2900
   action:
     service: scene.turn_on
     entity_id: scene.OutsideGarageOn
@@ -192,7 +192,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    below: 3300
+    below: 2900
   condition:
     condition: and
     conditions:
@@ -214,7 +214,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    below: 3300
+    below: 2900
   condition:
     condition: and
     conditions:
@@ -243,7 +243,7 @@
         state: 'off'
       - condition: numeric_state
         entity_id: sensor.cvillestation1_luminance
-        below: 3300
+        below: 2000
   action:
     service: scene.turn_on
     entity_id: scene.snack
@@ -266,7 +266,7 @@
         state: 'off'
       - condition: numeric_state
         entity_id: sensor.cvillestation1_luminance
-        below: 3300
+        below: 2000
   action:
     service: scene.turn_on
     entity_id: scene.downstairs_off    
@@ -286,8 +286,10 @@
     entity_id: sensor.cvillestation1_luminance
     above: 3000
   action:
-    service: scene.turn_on
-    entity_id: scene.daylight
+    - service: scene.turn_on
+      entity_id: scene.daylight
+    - service: homeassistant.turn_off
+      entity_id: switch.ge_14291_inwall_smart_switch_switch
 
 ###  Garage Entrance Opened  ###
 ###  [Lights] [Turn On] Inside Garage  ###
@@ -311,7 +313,7 @@
   condition:
     condition: numeric_state
     entity_id: sensor.cvillestation1_luminance
-    below: 3300
+    below: 2900
   action:
     service: homeassistant.turn_on
     entity_id: script.timed_porch_light
@@ -341,7 +343,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.aeotec_zw100_multisensor_6_temperature_2
-    above: 82
+    above: 81
   condition:
     condition: state
     entity_id: device_tracker.george_george
@@ -355,7 +357,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.aeotec_zw100_multisensor_6_temperature_2
-    below: 80
+    below: 79
   condition:
     condition: state
     entity_id: device_tracker.george_george

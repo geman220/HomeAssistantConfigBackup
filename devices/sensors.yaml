@@ -1,5 +1,4 @@
 - platform: bloomsky
-  scan_interval: 120
   name: Weather
 
 - platform: darksky

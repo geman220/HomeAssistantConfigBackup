@@ -1,3 +1,8 @@
+switch.ge_14291_inwall_smart_switch_switch:
+  friendly_name: Front Porch Light
+  icon: mdi:lightbulb
+group.All_lights:
+  friendly_name: All Lights
 alarm_control_panel.house_alarm:
   friendly_name: Alarm System
 sensor.garage_door_time_in_state:

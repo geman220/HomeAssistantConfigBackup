@@ -127,6 +127,7 @@ All_lights:
     - light.under_cab_right
     - light.under_cab_left
     - light.kitchen_center_dl
+    - switch.ge_14291_inwall_smart_switch_switch
 All_inside_lights:
   entities:
     - light.livingroom_dl_bl
